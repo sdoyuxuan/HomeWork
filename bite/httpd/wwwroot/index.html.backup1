@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;	 	 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<h1>Yutian</h1>
+</div>
+
+<div id="nav">
+London<br>
+Paris<br>
+Tokyo<br>
+</div>
+</div>
+<form action="./cgi-bin/mathcgi" method="GET">
+First data:<br>
+<input type="text" name="firstdata" value="1">
+
+<br>
+Last data:<br>
+<input type="text" name="lastdata" value="2">
+<br>
+<input type="submit" value="Submit">
+</form>
+<form action="./cgi-bin/mysqlcgi" method="POST">
+Name:<br>
+<input type="text" name="name" value="chengyuxuan">
+<br>
+School:<br>
+<input type="text" name="school" value="SUST">
+<br>
+<input type="submit" value="Submit">
+</form>
+<div id="footer">
+Copyright ? W3Schools.com
+</div>
+
+</body>
+</html>
+

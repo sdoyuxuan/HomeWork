@@ -1,0 +1,4332 @@
+
+;; Function String::String(const char*) (_ZN6StringC2EPKc)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; if (p == 0B)
+
+(insn 5 4 6 class_string.h:10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                    (const_int 4 [0x4])) [0 p+0 S4 A32])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 6 5 0 class_string.h:10 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; D.21135D.21135 = *p;
+
+(insn 8 7 9 class_string.h:10 (set (reg/f:SI 63)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 p+0 S4 A32])) -1 (nil))
+
+(insn 9 8 0 class_string.h:10 (set (reg:QI 62 [ D.21135 ])
+        (mem:QI (reg/f:SI 63) [0 S1 A8])) -1 (nil))
+
+;; if (D.21135D.21135 == 0)
+
+(insn 10 9 11 class_string.h:10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 62 [ D.21135 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 11 10 0 class_string.h:10 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 12 11 13 2 "" [0 uses])
+
+(note 13 12 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21137D.21137 = operator new [] (1);
+
+(insn 14 13 15 class_string.h:12 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (const_int 1 [0x1])) -1 (nil))
+
+(call_insn 15 14 16 class_string.h:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_Znaj") [flags 0x41]  <function_decl 0xb751f400 operator new []>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (nil)
+    (nil))
+
+(insn 16 15 0 class_string.h:12 (set (reg/f:SI 61 [ D.21137 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; D.21138D.21138 = (char *) D.21137D.21137;
+
+(insn 17 16 0 class_string.h:12 (set (reg/f:SI 60 [ D.21138 ])
+        (reg/f:SI 61 [ D.21137 ])) -1 (nil))
+
+;; this->_p ={v} D.21138D.21138;
+
+(insn 18 17 19 class_string.h:12 (set (reg/f:SI 64)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 19 18 0 class_string.h:12 (set (mem/s/f/j:SI (reg/f:SI 64) [0 <variable>._p+0 S4 A32])
+        (reg/f:SI 60 [ D.21138 ])) -1 (nil))
+
+;; D.21139D.21139 = this->_p;
+
+(insn 20 19 21 class_string.h:13 (set (reg/f:SI 65)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 21 20 0 class_string.h:13 (set (reg/f:SI 59 [ D.21139 ])
+        (mem/s/f/j:SI (reg/f:SI 65) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; *D.21139D.21139 ={v} 0;
+
+(insn 22 21 0 class_string.h:13 (set (mem:QI (reg/f:SI 59 [ D.21139 ]) [0 S1 A8])
+        (const_int 0 [0x0])) -1 (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 25 24 26 3 "" [0 uses])
+
+(note 26 25 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21141D.21141 = &this->_p;
+
+(insn 27 26 0 class_string.h:17 (set (reg/f:SI 58 [ D.21141 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+;; copy (this, D.21141D.21141, p);
+
+(insn 28 27 29 class_string.h:17 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 p+0 S4 A32])) -1 (nil))
+
+(insn 29 28 30 class_string.h:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 66)) -1 (nil))
+
+(insn 30 29 31 class_string.h:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 58 [ D.21141 ])) -1 (nil))
+
+(insn 31 30 32 class_string.h:17 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 32 31 33 class_string.h:17 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 67)) -1 (nil))
+
+(call_insn 33 32 0 class_string.h:17 (call (mem:QI (symbol_ref/i:SI ("_ZN6String4copyEPPcPKc") [flags 0x1]  <function_decl 0xb6b1c180 copy>) [0 S1 A8])
+        (const_int 12 [0xc])) -1 (nil)
+    (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; 
+
+(code_label 34 33 35 4 "" [0 uses])
+
+(note 35 34 0 NOTE_INSN_BASIC_BLOCK)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                    (const_int 4 [0x4])) [0 p+0 S4 A32])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 6 5 7 3 class_string.h:10 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 12)
+            (pc))) -1 (nil))
+;; End of basic block 3 -> ( 5 4)
+
+;; Succ edge  5
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 7 6 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 8 7 9 4 class_string.h:10 (set (reg/f:SI 63)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 p+0 S4 A32])) -1 (nil))
+
+(insn 9 8 10 4 class_string.h:10 (set (reg:QI 62 [ D.21135 ])
+        (mem:QI (reg/f:SI 63) [0 S1 A8])) -1 (nil))
+
+(insn 10 9 11 4 class_string.h:10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 62 [ D.21135 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 11 10 12 4 class_string.h:10 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 25)
+            (pc))) -1 (nil))
+;; End of basic block 4 -> ( 5 6)
+
+;; Succ edge  5 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 3 4) -> 5
+;; Pred edge  3
+;; Pred edge  4 (fallthru)
+(code_label 12 11 13 5 2 "" [1 uses])
+
+(note 13 12 14 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 14 13 15 5 class_string.h:12 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (const_int 1 [0x1])) -1 (nil))
+
+(call_insn 15 14 16 5 class_string.h:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_Znaj") [flags 0x41]  <function_decl 0xb751f400 operator new []>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (nil)
+    (nil))
+
+(insn 16 15 17 5 class_string.h:12 (set (reg/f:SI 61 [ D.21137 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+(insn 17 16 18 5 class_string.h:12 (set (reg/f:SI 60 [ D.21138 ])
+        (reg/f:SI 61 [ D.21137 ])) -1 (nil))
+
+(insn 18 17 19 5 class_string.h:12 (set (reg/f:SI 64)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 19 18 20 5 class_string.h:12 (set (mem/s/f/j:SI (reg/f:SI 64) [0 <variable>._p+0 S4 A32])
+        (reg/f:SI 60 [ D.21138 ])) -1 (nil))
+
+(insn 20 19 21 5 class_string.h:13 (set (reg/f:SI 65)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 21 20 22 5 class_string.h:13 (set (reg/f:SI 59 [ D.21139 ])
+        (mem/s/f/j:SI (reg/f:SI 65) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 22 21 23 5 class_string.h:13 (set (mem:QI (reg/f:SI 59 [ D.21139 ]) [0 S1 A8])
+        (const_int 0 [0x0])) -1 (nil))
+
+(jump_insn 23 22 24 5 class_string.h:10 (set (pc)
+        (label_ref 34)) -1 (nil))
+;; End of basic block 5 -> ( 7)
+
+;; Succ edge  7
+
+(barrier 24 23 25)
+
+;; Start of basic block ( 4) -> 6
+;; Pred edge  4
+(code_label 25 24 26 6 3 "" [1 uses])
+
+(note 26 25 27 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 27 26 28 6 class_string.h:17 (set (reg/f:SI 58 [ D.21141 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 28 27 29 6 class_string.h:17 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 p+0 S4 A32])) -1 (nil))
+
+(insn 29 28 30 6 class_string.h:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 66)) -1 (nil))
+
+(insn 30 29 31 6 class_string.h:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 58 [ D.21141 ])) -1 (nil))
+
+(insn 31 30 32 6 class_string.h:17 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 32 31 33 6 class_string.h:17 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 67)) -1 (nil))
+
+(call_insn 33 32 34 6 class_string.h:17 (call (mem:QI (symbol_ref/i:SI ("_ZN6String4copyEPPcPKc") [flags 0x1]  <function_decl 0xb6b1c180 copy>) [0 S1 A8])
+        (const_int 12 [0xc])) -1 (nil)
+    (nil))
+;; End of basic block 6 -> ( 7)
+
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 5 6) -> 7
+;; Pred edge  5
+;; Pred edge  6 (fallthru)
+(code_label 34 33 35 7 4 "" [1 uses])
+
+(note 35 34 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 7 -> ( 8)
+
+;; Succ edge  8 (fallthru)
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 40 35 37 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 37 40 38 8 class_string.h:19 (set (pc)
+        (label_ref 39)) -1 (nil))
+;; End of basic block 8 -> ( 10)
+
+;; Succ edge  10
+
+(barrier 38 37 36)
+
+;; Start of basic block () -> 9
+(code_label 36 38 41 9 1 "" [0 uses])
+
+(note 41 36 39 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 9 -> ( 10)
+
+;; Succ edge  10 (fallthru)
+
+;; Start of basic block ( 8 9) -> 10
+;; Pred edge  8
+;; Pred edge  9 (fallthru)
+(code_label 39 41 42 10 5 "" [1 uses])
+
+(note 42 39 0 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 10 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function String::String(const String&) (_ZN6StringC2ERKS_)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; D.21152D.21152 = str->_p;
+
+(insn 5 4 6 class_string.h:21 (set (reg/f:SI 65)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 0 class_string.h:21 (set (reg/f:SI 64 [ D.21152 ])
+        (mem/s/f/j:SI (reg/f:SI 65) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; D.21153D.21153 = strlen (D.21152D.21152);
+
+(insn 7 6 8 class_string.h:21 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 64 [ D.21152 ])) -1 (nil))
+
+(call_insn/i 8 7 9 class_string.h:21 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strlen") [flags 0x41]  <function_decl 0xb74d6780 strlen>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32]))
+        (nil)))
+
+(insn 9 8 0 class_string.h:21 (set (reg:SI 63 [ D.21153 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; D.21154D.21154 = D.21153D.21153 + 1;
+
+(insn 10 9 0 class_string.h:21 (parallel [
+            (set (reg:SI 62 [ D.21154 ])
+                (plus:SI (reg:SI 63 [ D.21153 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+;; D.21155D.21155 = operator new [] (D.21154D.21154);
+
+(insn 11 10 12 class_string.h:21 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 62 [ D.21154 ])) -1 (nil))
+
+(call_insn 12 11 13 class_string.h:21 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_Znaj") [flags 0x41]  <function_decl 0xb751f400 operator new []>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (nil)
+    (nil))
+
+(insn 13 12 0 class_string.h:21 (set (reg/f:SI 61 [ D.21155 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; D.21156D.21156 = (char *) D.21155D.21155;
+
+(insn 14 13 0 class_string.h:21 (set (reg/f:SI 60 [ D.21156 ])
+        (reg/f:SI 61 [ D.21155 ])) -1 (nil))
+
+;; this->_p ={v} D.21156D.21156;
+
+(insn 15 14 16 class_string.h:21 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 16 15 0 class_string.h:21 (set (mem/s/f/j:SI (reg/f:SI 66) [0 <variable>._p+0 S4 A32])
+        (reg/f:SI 60 [ D.21156 ])) -1 (nil))
+
+;; D.21157D.21157 = str->_p;
+
+(insn 17 16 18 class_string.h:23 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 18 17 0 class_string.h:23 (set (reg/f:SI 59 [ D.21157 ])
+        (mem/s/f/j:SI (reg/f:SI 67) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; D.21158D.21158 = &this->_p;
+
+(insn 19 18 0 class_string.h:23 (set (reg/f:SI 58 [ D.21158 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+;; copy (this, D.21158D.21158, D.21157D.21157);
+
+(insn 20 19 21 class_string.h:23 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 59 [ D.21157 ])) -1 (nil))
+
+(insn 21 20 22 class_string.h:23 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 58 [ D.21158 ])) -1 (nil))
+
+(insn 22 21 23 class_string.h:23 (set (reg/f:SI 68)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 23 22 24 class_string.h:23 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 68)) -1 (nil))
+
+(call_insn 24 23 0 class_string.h:23 (call (mem:QI (symbol_ref/i:SI ("_ZN6String4copyEPPcPKc") [flags 0x1]  <function_decl 0xb6b1c180 copy>) [0 S1 A8])
+        (const_int 12 [0xc])) -1 (nil)
+    (nil))
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:21 (set (reg/f:SI 65)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:21 (set (reg/f:SI 64 [ D.21152 ])
+        (mem/s/f/j:SI (reg/f:SI 65) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 7 6 8 3 class_string.h:21 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 64 [ D.21152 ])) -1 (nil))
+
+(call_insn/i 8 7 9 3 class_string.h:21 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strlen") [flags 0x41]  <function_decl 0xb74d6780 strlen>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32]))
+        (nil)))
+
+(insn 9 8 10 3 class_string.h:21 (set (reg:SI 63 [ D.21153 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+(insn 10 9 11 3 class_string.h:21 (parallel [
+            (set (reg:SI 62 [ D.21154 ])
+                (plus:SI (reg:SI 63 [ D.21153 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 11 10 12 3 class_string.h:21 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 62 [ D.21154 ])) -1 (nil))
+
+(call_insn 12 11 13 3 class_string.h:21 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_Znaj") [flags 0x41]  <function_decl 0xb751f400 operator new []>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (nil)
+    (nil))
+
+(insn 13 12 14 3 class_string.h:21 (set (reg/f:SI 61 [ D.21155 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+(insn 14 13 15 3 class_string.h:21 (set (reg/f:SI 60 [ D.21156 ])
+        (reg/f:SI 61 [ D.21155 ])) -1 (nil))
+
+(insn 15 14 16 3 class_string.h:21 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 16 15 17 3 class_string.h:21 (set (mem/s/f/j:SI (reg/f:SI 66) [0 <variable>._p+0 S4 A32])
+        (reg/f:SI 60 [ D.21156 ])) -1 (nil))
+
+(insn 17 16 18 3 class_string.h:23 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 18 17 19 3 class_string.h:23 (set (reg/f:SI 59 [ D.21157 ])
+        (mem/s/f/j:SI (reg/f:SI 67) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 19 18 20 3 class_string.h:23 (set (reg/f:SI 58 [ D.21158 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 20 19 21 3 class_string.h:23 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 59 [ D.21157 ])) -1 (nil))
+
+(insn 21 20 22 3 class_string.h:23 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 58 [ D.21158 ])) -1 (nil))
+
+(insn 22 21 23 3 class_string.h:23 (set (reg/f:SI 68)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 23 22 24 3 class_string.h:23 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 68)) -1 (nil))
+
+(call_insn 24 23 29 3 class_string.h:23 (call (mem:QI (symbol_ref/i:SI ("_ZN6String4copyEPPcPKc") [flags 0x1]  <function_decl 0xb6b1c180 copy>) [0 S1 A8])
+        (const_int 12 [0xc])) -1 (nil)
+    (nil))
+;; End of basic block 3 -> ( 4)
+
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 29 24 26 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 26 29 27 4 class_string.h:24 (set (pc)
+        (label_ref 28)) -1 (nil))
+;; End of basic block 4 -> ( 6)
+
+;; Succ edge  6
+
+(barrier 27 26 25)
+
+;; Start of basic block () -> 5
+(code_label 25 27 30 5 6 "" [0 uses])
+
+(note 30 25 28 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 28 30 31 6 7 "" [1 uses])
+
+(note 31 28 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 6 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function String& String::operator=(const String&) (_ZN6StringaSERKS_)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; D.21163D.21163 = operator!= (this, str);
+
+(insn 5 4 6 class_string.h:28 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 class_string.h:28 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 66)) -1 (nil))
+
+(insn 7 6 8 class_string.h:28 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 8 7 9 class_string.h:28 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 67)) -1 (nil))
+
+(call_insn 9 8 10 class_string.h:28 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringneERKS_") [flags 0x1]  <function_decl 0xb6b1c000 operator!=>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 10 9 0 class_string.h:28 (set (reg:QI 63 [ D.21163 ])
+        (reg:QI 0 ax)) -1 (nil))
+
+;; retval.63 = D.21163D.21163;
+
+(insn 11 10 0 class_string.h:28 (set (reg:QI 64 [ retval.63 ])
+        (reg:QI 63 [ D.21163 ])) -1 (nil))
+
+;; if (retval.63 != 0)
+
+(insn 12 11 13 class_string.h:28 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 64 [ retval.63 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 13 12 0 class_string.h:28 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; temp ={v} 0B;
+
+(insn 15 14 0 class_string.h:30 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 temp+0 S4 A32])
+        (const_int 0 [0x0])) -1 (nil))
+
+;; D.21166D.21166 = str->_p;
+
+(insn 16 15 17 class_string.h:31 (set (reg/f:SI 68)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 17 16 0 class_string.h:31 (set (reg/f:SI 62 [ D.21166 ])
+        (mem/s/f/j:SI (reg/f:SI 68) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; copy (this, &temp, D.21166D.21166);
+
+(insn 18 17 19 class_string.h:31 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 62 [ D.21166 ])) -1 (nil))
+
+(insn 19 18 20 class_string.h:31 (parallel [
+            (set (reg:SI 69)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 20 19 21 class_string.h:31 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 69)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 21 20 22 class_string.h:31 (set (reg/f:SI 70)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 22 21 23 class_string.h:31 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 70)) -1 (nil))
+
+(call_insn 23 22 0 class_string.h:31 (call (mem:QI (symbol_ref/i:SI ("_ZN6String4copyEPPcPKc") [flags 0x1]  <function_decl 0xb6b1c180 copy>) [0 S1 A8])
+        (const_int 12 [0xc])) -1 (nil)
+    (nil))
+
+;; D.21167D.21167 = this->_p;
+
+(insn 24 23 25 class_string.h:32 (set (reg/f:SI 71)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 25 24 0 class_string.h:32 (set (reg/f:SI 61 [ D.21167 ])
+        (mem/s/f/j:SI (reg/f:SI 71) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; if (D.21167D.21167 != 0B)
+
+(insn 26 25 27 class_string.h:32 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:SI 61 [ D.21167 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 27 26 0 class_string.h:32 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; D.21170D.21170 = this->_p;
+
+(insn 29 28 30 class_string.h:32 (set (reg/f:SI 72)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 30 29 0 class_string.h:32 (set (reg/f:SI 60 [ D.21170 ])
+        (mem/s/f/j:SI (reg/f:SI 72) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; operator delete [] (D.21170D.21170);
+
+(insn 31 30 32 class_string.h:32 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 60 [ D.21170 ])) -1 (nil))
+
+(call_insn 32 31 0 class_string.h:32 (call (mem:QI (symbol_ref:SI ("_ZdaPv") [flags 0x41]  <function_decl 0xb751f500 operator delete []>) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 33 32 34 10 "" [0 uses])
+
+(note 34 33 0 NOTE_INSN_BASIC_BLOCK)
+
+;; temp.64 = temp;
+
+(insn 35 34 0 class_string.h:33 (set (reg/f:SI 59 [ temp.64 ])
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 temp+0 S4 A32])) -1 (nil))
+
+;; this->_p ={v} temp.64;
+
+(insn 36 35 37 class_string.h:33 (set (reg/f:SI 73)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 37 36 0 class_string.h:33 (set (mem/s/f/j:SI (reg/f:SI 73) [0 <variable>._p+0 S4 A32])
+        (reg/f:SI 59 [ temp.64 ])) -1 (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; 
+
+(code_label 38 37 39 9 "" [0 uses])
+
+(note 39 38 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21174D.21174 = this;
+
+(insn 40 39 0 class_string.h:35 (set (reg/f:SI 58 [ D.21174 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+;; return D.21174D.21174;
+
+(insn 41 40 42 class_string.h:35 (set (reg:SI 65 [ <result> ])
+        (reg/f:SI 58 [ D.21174 ])) -1 (nil))
+
+(jump_insn 42 41 43 class_string.h:35 (set (pc)
+        (label_ref 0)) -1 (nil))
+
+(barrier 43 42 0)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:28 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:28 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 66)) -1 (nil))
+
+(insn 7 6 8 3 class_string.h:28 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 8 7 9 3 class_string.h:28 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 67)) -1 (nil))
+
+(call_insn 9 8 10 3 class_string.h:28 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringneERKS_") [flags 0x1]  <function_decl 0xb6b1c000 operator!=>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 10 9 11 3 class_string.h:28 (set (reg:QI 63 [ D.21163 ])
+        (reg:QI 0 ax)) -1 (nil))
+
+(insn 11 10 12 3 class_string.h:28 (set (reg:QI 64 [ retval.63 ])
+        (reg:QI 63 [ D.21163 ])) -1 (nil))
+
+(insn 12 11 13 3 class_string.h:28 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 64 [ retval.63 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 13 12 14 3 class_string.h:28 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 38)
+            (pc))) -1 (nil))
+;; End of basic block 3 -> ( 4 7)
+
+;; Succ edge  4 (fallthru)
+;; Succ edge  7
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 15 14 16 4 class_string.h:30 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 temp+0 S4 A32])
+        (const_int 0 [0x0])) -1 (nil))
+
+(insn 16 15 17 4 class_string.h:31 (set (reg/f:SI 68)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 17 16 18 4 class_string.h:31 (set (reg/f:SI 62 [ D.21166 ])
+        (mem/s/f/j:SI (reg/f:SI 68) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 18 17 19 4 class_string.h:31 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 62 [ D.21166 ])) -1 (nil))
+
+(insn 19 18 20 4 class_string.h:31 (parallel [
+            (set (reg:SI 69)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 20 19 21 4 class_string.h:31 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 69)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 21 20 22 4 class_string.h:31 (set (reg/f:SI 70)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 22 21 23 4 class_string.h:31 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 70)) -1 (nil))
+
+(call_insn 23 22 24 4 class_string.h:31 (call (mem:QI (symbol_ref/i:SI ("_ZN6String4copyEPPcPKc") [flags 0x1]  <function_decl 0xb6b1c180 copy>) [0 S1 A8])
+        (const_int 12 [0xc])) -1 (nil)
+    (nil))
+
+(insn 24 23 25 4 class_string.h:32 (set (reg/f:SI 71)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 25 24 26 4 class_string.h:32 (set (reg/f:SI 61 [ D.21167 ])
+        (mem/s/f/j:SI (reg/f:SI 71) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 26 25 27 4 class_string.h:32 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:SI 61 [ D.21167 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 27 26 28 4 class_string.h:32 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 33)
+            (pc))) -1 (nil))
+;; End of basic block 4 -> ( 5 6)
+
+;; Succ edge  5 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 4) -> 5
+;; Pred edge  4 (fallthru)
+(note 28 27 29 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 29 28 30 5 class_string.h:32 (set (reg/f:SI 72)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 30 29 31 5 class_string.h:32 (set (reg/f:SI 60 [ D.21170 ])
+        (mem/s/f/j:SI (reg/f:SI 72) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 31 30 32 5 class_string.h:32 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 60 [ D.21170 ])) -1 (nil))
+
+(call_insn 32 31 33 5 class_string.h:32 (call (mem:QI (symbol_ref:SI ("_ZdaPv") [flags 0x41]  <function_decl 0xb751f500 operator delete []>) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 33 32 34 6 10 "" [1 uses])
+
+(note 34 33 35 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 35 34 36 6 class_string.h:33 (set (reg/f:SI 59 [ temp.64 ])
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 temp+0 S4 A32])) -1 (nil))
+
+(insn 36 35 37 6 class_string.h:33 (set (reg/f:SI 73)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 37 36 38 6 class_string.h:33 (set (mem/s/f/j:SI (reg/f:SI 73) [0 <variable>._p+0 S4 A32])
+        (reg/f:SI 59 [ temp.64 ])) -1 (nil))
+;; End of basic block 6 -> ( 7)
+
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 3 6) -> 7
+;; Pred edge  3
+;; Pred edge  6 (fallthru)
+(code_label 38 37 39 7 9 "" [1 uses])
+
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 40 39 41 7 class_string.h:35 (set (reg/f:SI 58 [ D.21174 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 41 40 42 7 class_string.h:35 (set (reg:SI 65 [ <result> ])
+        (reg/f:SI 58 [ D.21174 ])) -1 (nil))
+
+(jump_insn 42 41 43 7 class_string.h:35 (set (pc)
+        (label_ref 44)) -1 (nil))
+;; End of basic block 7 -> ( 9)
+
+;; Succ edge  9
+
+(barrier 43 42 52)
+
+;; Start of basic block () -> 8
+(note 52 43 46 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 46 52 47 8 class_string.h:36 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 47 46 48 8 class_string.h:36 (clobber (reg:SI 65 [ <result> ])) -1 (nil))
+
+(jump_insn 48 47 49 8 class_string.h:36 (set (pc)
+        (label_ref 50)) -1 (nil))
+;; End of basic block 8 -> ( 10)
+
+;; Succ edge  10
+
+(barrier 49 48 44)
+
+;; Start of basic block ( 7) -> 9
+;; Pred edge  7
+(code_label 44 49 53 9 8 "" [1 uses])
+
+(note 53 44 45 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 45 53 50 9 class_string.h:36 (set (reg/i:SI 0 ax)
+        (reg:SI 65 [ <result> ])) -1 (nil))
+;; End of basic block 9 -> ( 10)
+
+;; Succ edge  10 (fallthru)
+
+;; Start of basic block ( 8 9) -> 10
+;; Pred edge  8
+;; Pred edge  9 (fallthru)
+(code_label 50 45 54 10 11 "" [1 uses])
+
+(note 54 50 51 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 51 54 0 10 class_string.h:36 (use (reg/i:SI 0 ax)) -1 (nil))
+;; End of basic block 10 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function int String::size() const (_ZNK6String4sizeEv)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; ret = this->_p;
+
+(insn 5 4 6 class_string.h:43 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 class_string.h:43 (set (reg/f:SI 63)
+        (mem/s/f/j:SI (reg/f:SI 62) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 7 6 0 class_string.h:43 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])
+        (reg/f:SI 63)) -1 (nil))
+
+;; count = 0;
+
+(insn 8 7 0 class_string.h:44 (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])
+        (const_int 0 [0x0])) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; count = count + 1;
+
+(insn 12 11 0 class_string.h:47 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                        (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                            (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 13 12 14 13 "" [0 uses])
+
+(note 14 13 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21185D.21185 = *ret;
+
+(insn 15 14 16 class_string.h:45 (set (reg/f:SI 64)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])) -1 (nil))
+
+(insn 16 15 0 class_string.h:45 (set (reg:QI 59 [ D.21185 ])
+        (mem:QI (reg/f:SI 64) [0 S1 A8])) -1 (nil))
+
+;; retval.65 = D.21185D.21185 != 0;
+
+(insn 17 16 18 class_string.h:45 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 59 [ D.21185 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(insn 18 17 0 class_string.h:45 (set (reg:QI 60 [ retval.65 ])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0x0]))) -1 (expr_list:REG_EQUAL (ne:QI (reg:QI 59 [ D.21185 ])
+            (const_int 0 [0x0]))
+        (nil)))
+
+;; ret = ret + 1;
+
+(insn 19 18 0 class_string.h:45 (parallel [
+            (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                        (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])
+                (plus:SI (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                            (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+;; if (retval.65 != 0)
+
+(insn 21 19 22 class_string.h:45 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 60 [ retval.65 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 22 21 0 class_string.h:45 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 20)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; D.21186D.21186 = count;
+
+(insn 24 23 0 class_string.h:49 (set (reg:SI 58 [ D.21186 ])
+        (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])) -1 (nil))
+
+;; return D.21186D.21186;
+
+(insn 25 24 26 class_string.h:49 (set (reg:SI 61 [ <result> ])
+        (reg:SI 58 [ D.21186 ])) -1 (nil))
+
+(jump_insn 26 25 27 class_string.h:49 (set (pc)
+        (label_ref 0)) -1 (nil))
+
+(barrier 27 26 0)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:43 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:43 (set (reg/f:SI 63)
+        (mem/s/f/j:SI (reg/f:SI 62) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 7 6 8 3 class_string.h:43 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])
+        (reg/f:SI 63)) -1 (nil))
+
+(insn 8 7 9 3 class_string.h:44 (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])
+        (const_int 0 [0x0])) -1 (nil))
+
+(jump_insn 9 8 10 3 class_string.h:45 (set (pc)
+        (label_ref 13)) -1 (nil))
+;; End of basic block 3 -> ( 5)
+
+;; Succ edge  5
+
+(barrier 10 9 20)
+
+;; Start of basic block ( 5) -> 4
+;; Pred edge  5
+(code_label 20 10 11 4 14 "" [1 uses])
+
+(note 11 20 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 12 11 13 4 class_string.h:47 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                        (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                            (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+;; End of basic block 4 -> ( 5)
+
+;; Succ edge  5 (fallthru)
+
+;; Start of basic block ( 3 4) -> 5
+;; Pred edge  3
+;; Pred edge  4 (fallthru)
+(code_label 13 12 14 5 13 "" [1 uses])
+
+(note 14 13 15 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 15 14 16 5 class_string.h:45 (set (reg/f:SI 64)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])) -1 (nil))
+
+(insn 16 15 17 5 class_string.h:45 (set (reg:QI 59 [ D.21185 ])
+        (mem:QI (reg/f:SI 64) [0 S1 A8])) -1 (nil))
+
+(insn 17 16 18 5 class_string.h:45 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 59 [ D.21185 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(insn 18 17 19 5 class_string.h:45 (set (reg:QI 60 [ retval.65 ])
+        (ne:QI (reg:CCZ 17 flags)
+            (const_int 0 [0x0]))) -1 (expr_list:REG_EQUAL (ne:QI (reg:QI 59 [ D.21185 ])
+            (const_int 0 [0x0]))
+        (nil)))
+
+(insn 19 18 21 5 class_string.h:45 (parallel [
+            (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                        (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])
+                (plus:SI (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                            (const_int -8 [0xfffffff8])) [0 ret+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 21 19 22 5 class_string.h:45 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 60 [ retval.65 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 22 21 23 5 class_string.h:45 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 20)
+            (pc))) -1 (nil))
+;; End of basic block 5 -> ( 4 6)
+
+;; Succ edge  4
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5) -> 6
+;; Pred edge  5 (fallthru)
+(note 23 22 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 24 23 25 6 class_string.h:49 (set (reg:SI 58 [ D.21186 ])
+        (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 count+0 S4 A32])) -1 (nil))
+
+(insn 25 24 26 6 class_string.h:49 (set (reg:SI 61 [ <result> ])
+        (reg:SI 58 [ D.21186 ])) -1 (nil))
+
+(jump_insn 26 25 27 6 class_string.h:49 (set (pc)
+        (label_ref 28)) -1 (nil))
+;; End of basic block 6 -> ( 8)
+
+;; Succ edge  8
+
+(barrier 27 26 36)
+
+;; Start of basic block () -> 7
+(note 36 27 30 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 30 36 31 7 class_string.h:50 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 31 30 32 7 class_string.h:50 (clobber (reg:SI 61 [ <result> ])) -1 (nil))
+
+(jump_insn 32 31 33 7 class_string.h:50 (set (pc)
+        (label_ref 34)) -1 (nil))
+;; End of basic block 7 -> ( 9)
+
+;; Succ edge  9
+
+(barrier 33 32 28)
+
+;; Start of basic block ( 6) -> 8
+;; Pred edge  6
+(code_label 28 33 37 8 12 "" [1 uses])
+
+(note 37 28 29 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 29 37 34 8 class_string.h:50 (set (reg/i:SI 0 ax)
+        (reg:SI 61 [ <result> ])) -1 (nil))
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 7 8) -> 9
+;; Pred edge  7
+;; Pred edge  8 (fallthru)
+(code_label 34 29 38 9 15 "" [1 uses])
+
+(note 38 34 35 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 35 38 0 9 class_string.h:50 (use (reg/i:SI 0 ax)) -1 (nil))
+;; End of basic block 9 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function bool String::operator==(const String&) (_ZN6StringeqERKS_)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; left = this->_p;
+
+(insn 5 4 6 class_string.h:75 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 class_string.h:75 (set (reg/f:SI 68)
+        (mem/s/f/j:SI (reg/f:SI 67) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 7 6 0 class_string.h:75 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])
+        (reg/f:SI 68)) -1 (nil))
+
+;; right = str->_p;
+
+(insn 8 7 9 class_string.h:76 (set (reg/f:SI 69)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 9 8 10 class_string.h:76 (set (reg/f:SI 70)
+        (mem/s/f/j:SI (reg/f:SI 69) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 10 9 0 class_string.h:76 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])
+        (reg/f:SI 70)) -1 (nil))
+
+;; D.21204D.21204 = *right;
+
+(insn 11 10 12 class_string.h:77 (set (reg/f:SI 71)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])) -1 (nil))
+
+(insn 12 11 0 class_string.h:77 (set (reg:QI 65 [ D.21204 ])
+        (mem:QI (reg/f:SI 71) [0 S1 A8])) -1 (nil))
+
+;; if (D.21204D.21204 == 0)
+
+(insn 13 12 14 class_string.h:77 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 65 [ D.21204 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 14 13 0 class_string.h:77 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; D.21207D.21207 = *left;
+
+(insn 16 15 17 class_string.h:77 (set (reg/f:SI 72)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])) -1 (nil))
+
+(insn 17 16 0 class_string.h:77 (set (reg:QI 64 [ D.21207 ])
+        (mem:QI (reg/f:SI 72) [0 S1 A8])) -1 (nil))
+
+;; if (D.21207D.21207 == 0)
+
+(insn 18 17 19 class_string.h:77 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 64 [ D.21207 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 19 18 0 class_string.h:77 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; D.21210D.21210 = 1;
+
+(insn 21 20 0 class_string.h:77 (set (reg:QI 63 [ D.21210 ])
+        (const_int 1 [0x1])) -1 (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 24 23 25 17 "" [0 uses])
+
+(note 25 24 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21214D.21214 = *left;
+
+(insn 26 25 27 class_string.h:78 (set (reg/f:SI 73)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])) -1 (nil))
+
+(insn 27 26 0 class_string.h:78 (set (reg:QI 62 [ D.21214 ])
+        (mem:QI (reg/f:SI 73) [0 S1 A8])) -1 (nil))
+
+;; D.21215D.21215 = *right;
+
+(insn 28 27 29 class_string.h:78 (set (reg/f:SI 74)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])) -1 (nil))
+
+(insn 29 28 0 class_string.h:78 (set (reg:QI 61 [ D.21215 ])
+        (mem:QI (reg/f:SI 74) [0 S1 A8])) -1 (nil))
+
+;; D.21216D.21216 = D.21214D.21214 == D.21215D.21215;
+
+(insn 30 29 31 class_string.h:78 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 62 [ D.21214 ])
+            (reg:QI 61 [ D.21215 ]))) -1 (nil))
+
+(insn 31 30 0 class_string.h:78 (set (reg:QI 60 [ D.21216 ])
+        (eq:QI (reg:CCZ 17 flags)
+            (const_int 0 [0x0]))) -1 (expr_list:REG_EQUAL (eq:QI (reg:QI 62 [ D.21214 ])
+            (reg:QI 61 [ D.21215 ]))
+        (nil)))
+
+;; if (D.21216D.21216 != 0)
+
+(insn 32 31 33 class_string.h:78 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 60 [ D.21216 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 33 32 0 class_string.h:78 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 24)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; D.21218D.21218 = *left;
+
+(insn 35 34 36 class_string.h:79 (set (reg/f:SI 75)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])) -1 (nil))
+
+(insn 36 35 0 class_string.h:79 (set (reg:QI 59 [ D.21218 ])
+        (mem:QI (reg/f:SI 75) [0 S1 A8])) -1 (nil))
+
+;; if (D.21218D.21218 == 0)
+
+(insn 37 36 38 class_string.h:79 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 59 [ D.21218 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 38 37 0 class_string.h:79 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 7
+
+;; D.21220D.21220 = *right;
+
+(insn 40 39 41 class_string.h:79 (set (reg/f:SI 76)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])) -1 (nil))
+
+(insn 41 40 0 class_string.h:79 (set (reg:QI 58 [ D.21220 ])
+        (mem:QI (reg/f:SI 76) [0 S1 A8])) -1 (nil))
+
+;; if (D.21220D.21220 == 0)
+
+(insn 42 41 43 class_string.h:79 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 58 [ D.21220 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 43 42 0 class_string.h:79 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 8
+
+;; D.21210D.21210 = 1;
+
+(insn 45 44 0 class_string.h:80 (set (reg:QI 63 [ D.21210 ])
+        (const_int 1 [0x1])) -1 (nil))
+
+;; Generating RTL for gimple basic block 9
+
+;; 
+
+(code_label 48 47 49 19 "" [0 uses])
+
+(note 49 48 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21210D.21210 = 0;
+
+(insn 50 49 0 class_string.h:82 (set (reg:QI 63 [ D.21210 ])
+        (const_int 0 [0x0])) -1 (nil))
+
+;; Generating RTL for gimple basic block 10
+
+;; 
+
+(code_label 51 50 52 18 "" [0 uses])
+
+(note 52 51 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return D.21210D.21210;
+
+(insn 53 52 54 class_string.h:82 (set (reg:QI 66 [ <result> ])
+        (reg:QI 63 [ D.21210 ])) -1 (nil))
+
+(jump_insn 54 53 55 class_string.h:82 (set (pc)
+        (label_ref 0)) -1 (nil))
+
+(barrier 55 54 0)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:75 (set (reg/f:SI 67)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:75 (set (reg/f:SI 68)
+        (mem/s/f/j:SI (reg/f:SI 67) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 7 6 8 3 class_string.h:75 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])
+        (reg/f:SI 68)) -1 (nil))
+
+(insn 8 7 9 3 class_string.h:76 (set (reg/f:SI 69)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 9 8 10 3 class_string.h:76 (set (reg/f:SI 70)
+        (mem/s/f/j:SI (reg/f:SI 69) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 10 9 11 3 class_string.h:76 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])
+        (reg/f:SI 70)) -1 (nil))
+
+(insn 11 10 12 3 class_string.h:77 (set (reg/f:SI 71)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])) -1 (nil))
+
+(insn 12 11 13 3 class_string.h:77 (set (reg:QI 65 [ D.21204 ])
+        (mem:QI (reg/f:SI 71) [0 S1 A8])) -1 (nil))
+
+(insn 13 12 14 3 class_string.h:77 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 65 [ D.21204 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 14 13 15 3 class_string.h:77 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 24)
+            (pc))) -1 (nil))
+;; End of basic block 3 -> ( 4 6)
+
+;; Succ edge  4 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 15 14 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 16 15 17 4 class_string.h:77 (set (reg/f:SI 72)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])) -1 (nil))
+
+(insn 17 16 18 4 class_string.h:77 (set (reg:QI 64 [ D.21207 ])
+        (mem:QI (reg/f:SI 72) [0 S1 A8])) -1 (nil))
+
+(insn 18 17 19 4 class_string.h:77 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 64 [ D.21207 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 19 18 20 4 class_string.h:77 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 24)
+            (pc))) -1 (nil))
+;; End of basic block 4 -> ( 5 6)
+
+;; Succ edge  5 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 4) -> 5
+;; Pred edge  4 (fallthru)
+(note 20 19 21 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 21 20 22 5 class_string.h:77 (set (reg:QI 63 [ D.21210 ])
+        (const_int 1 [0x1])) -1 (nil))
+
+(jump_insn 22 21 23 5 class_string.h:77 (set (pc)
+        (label_ref 51)) -1 (nil))
+;; End of basic block 5 -> ( 11)
+
+;; Succ edge  11
+
+(barrier 23 22 24)
+
+;; Start of basic block ( 3 4 6) -> 6
+;; Pred edge  3
+;; Pred edge  4
+;; Pred edge  6
+(code_label 24 23 25 6 17 "" [3 uses])
+
+(note 25 24 26 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 26 25 27 6 class_string.h:78 (set (reg/f:SI 73)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])) -1 (nil))
+
+(insn 27 26 28 6 class_string.h:78 (set (reg:QI 62 [ D.21214 ])
+        (mem:QI (reg/f:SI 73) [0 S1 A8])) -1 (nil))
+
+(insn 28 27 29 6 class_string.h:78 (set (reg/f:SI 74)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])) -1 (nil))
+
+(insn 29 28 30 6 class_string.h:78 (set (reg:QI 61 [ D.21215 ])
+        (mem:QI (reg/f:SI 74) [0 S1 A8])) -1 (nil))
+
+(insn 30 29 31 6 class_string.h:78 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 62 [ D.21214 ])
+            (reg:QI 61 [ D.21215 ]))) -1 (nil))
+
+(insn 31 30 32 6 class_string.h:78 (set (reg:QI 60 [ D.21216 ])
+        (eq:QI (reg:CCZ 17 flags)
+            (const_int 0 [0x0]))) -1 (expr_list:REG_EQUAL (eq:QI (reg:QI 62 [ D.21214 ])
+            (reg:QI 61 [ D.21215 ]))
+        (nil)))
+
+(insn 32 31 33 6 class_string.h:78 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 60 [ D.21216 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 33 32 34 6 class_string.h:78 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 24)
+            (pc))) -1 (nil))
+;; End of basic block 6 -> ( 6 7)
+
+;; Succ edge  6
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 34 33 35 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 35 34 36 7 class_string.h:79 (set (reg/f:SI 75)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 left+0 S4 A32])) -1 (nil))
+
+(insn 36 35 37 7 class_string.h:79 (set (reg:QI 59 [ D.21218 ])
+        (mem:QI (reg/f:SI 75) [0 S1 A8])) -1 (nil))
+
+(insn 37 36 38 7 class_string.h:79 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 59 [ D.21218 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 38 37 39 7 class_string.h:79 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 48)
+            (pc))) -1 (nil))
+;; End of basic block 7 -> ( 8 10)
+
+;; Succ edge  8 (fallthru)
+;; Succ edge  10
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 39 38 40 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 40 39 41 8 class_string.h:79 (set (reg/f:SI 76)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 right+0 S4 A32])) -1 (nil))
+
+(insn 41 40 42 8 class_string.h:79 (set (reg:QI 58 [ D.21220 ])
+        (mem:QI (reg/f:SI 76) [0 S1 A8])) -1 (nil))
+
+(insn 42 41 43 8 class_string.h:79 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 58 [ D.21220 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 43 42 44 8 class_string.h:79 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 48)
+            (pc))) -1 (nil))
+;; End of basic block 8 -> ( 9 10)
+
+;; Succ edge  9 (fallthru)
+;; Succ edge  10
+
+;; Start of basic block ( 8) -> 9
+;; Pred edge  8 (fallthru)
+(note 44 43 45 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 45 44 46 9 class_string.h:80 (set (reg:QI 63 [ D.21210 ])
+        (const_int 1 [0x1])) -1 (nil))
+
+(jump_insn 46 45 47 9 class_string.h:80 (set (pc)
+        (label_ref 51)) -1 (nil))
+;; End of basic block 9 -> ( 11)
+
+;; Succ edge  11
+
+(barrier 47 46 48)
+
+;; Start of basic block ( 7 8) -> 10
+;; Pred edge  7
+;; Pred edge  8
+(code_label 48 47 49 10 19 "" [2 uses])
+
+(note 49 48 50 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 50 49 51 10 class_string.h:82 (set (reg:QI 63 [ D.21210 ])
+        (const_int 0 [0x0])) -1 (nil))
+;; End of basic block 10 -> ( 11)
+
+;; Succ edge  11 (fallthru)
+
+;; Start of basic block ( 5 9 10) -> 11
+;; Pred edge  5
+;; Pred edge  9
+;; Pred edge  10 (fallthru)
+(code_label 51 50 52 11 18 "" [2 uses])
+
+(note 52 51 53 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 53 52 54 11 class_string.h:82 (set (reg:QI 66 [ <result> ])
+        (reg:QI 63 [ D.21210 ])) -1 (nil))
+
+(jump_insn 54 53 55 11 class_string.h:82 (set (pc)
+        (label_ref 56)) -1 (nil))
+;; End of basic block 11 -> ( 13)
+
+;; Succ edge  13
+
+(barrier 55 54 64)
+
+;; Start of basic block () -> 12
+(note 64 55 58 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 58 64 59 12 class_string.h:83 (clobber (reg/i:QI 0 ax)) -1 (nil))
+
+(insn 59 58 60 12 class_string.h:83 (clobber (reg:QI 66 [ <result> ])) -1 (nil))
+
+(jump_insn 60 59 61 12 class_string.h:83 (set (pc)
+        (label_ref 62)) -1 (nil))
+;; End of basic block 12 -> ( 14)
+
+;; Succ edge  14
+
+(barrier 61 60 56)
+
+;; Start of basic block ( 11) -> 13
+;; Pred edge  11
+(code_label 56 61 65 13 16 "" [1 uses])
+
+(note 65 56 57 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 57 65 62 13 class_string.h:83 (set (reg/i:QI 0 ax)
+        (reg:QI 66 [ <result> ])) -1 (nil))
+;; End of basic block 13 -> ( 14)
+
+;; Succ edge  14 (fallthru)
+
+;; Start of basic block ( 12 13) -> 14
+;; Pred edge  12
+;; Pred edge  13 (fallthru)
+(code_label 62 57 66 14 20 "" [1 uses])
+
+(note 66 62 63 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+
+(insn 63 66 0 14 class_string.h:83 (use (reg/i:QI 0 ax)) -1 (nil))
+;; End of basic block 14 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function bool String::operator!=(const String&) (_ZN6StringneERKS_)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; D.21224D.21224 = operator== (this, str);
+
+(insn 5 4 6 class_string.h:86 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 class_string.h:86 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 62)) -1 (nil))
+
+(insn 7 6 8 class_string.h:86 (set (reg/f:SI 63)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 8 7 9 class_string.h:86 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 63)) -1 (nil))
+
+(call_insn 9 8 10 class_string.h:86 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringeqERKS_") [flags 0x1]  <function_decl 0xb6b0ff80 operator==>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 10 9 0 class_string.h:86 (set (reg:QI 59 [ D.21224 ])
+        (reg:QI 0 ax)) -1 (nil))
+
+;; retval.68 = D.21224D.21224;
+
+(insn 11 10 0 class_string.h:86 (set (reg:QI 60 [ retval.68 ])
+        (reg:QI 59 [ D.21224 ])) -1 (nil))
+
+;; if (retval.68 != 0)
+
+(insn 12 11 13 class_string.h:86 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 60 [ retval.68 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 13 12 0 class_string.h:86 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; D.21227D.21227 = 0;
+
+(insn 15 14 0 class_string.h:86 (set (reg:QI 58 [ D.21227 ])
+        (const_int 0 [0x0])) -1 (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 18 17 19 22 "" [0 uses])
+
+(note 19 18 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21227D.21227 = 1;
+
+(insn 20 19 0 class_string.h:87 (set (reg:QI 58 [ D.21227 ])
+        (const_int 1 [0x1])) -1 (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 21 20 22 23 "" [0 uses])
+
+(note 22 21 0 NOTE_INSN_BASIC_BLOCK)
+
+;; return D.21227D.21227;
+
+(insn 23 22 24 class_string.h:87 (set (reg:QI 61 [ <result> ])
+        (reg:QI 58 [ D.21227 ])) -1 (nil))
+
+(jump_insn 24 23 25 class_string.h:87 (set (pc)
+        (label_ref 0)) -1 (nil))
+
+(barrier 25 24 0)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:86 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:86 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 62)) -1 (nil))
+
+(insn 7 6 8 3 class_string.h:86 (set (reg/f:SI 63)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 8 7 9 3 class_string.h:86 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 63)) -1 (nil))
+
+(call_insn 9 8 10 3 class_string.h:86 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringeqERKS_") [flags 0x1]  <function_decl 0xb6b0ff80 operator==>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 10 9 11 3 class_string.h:86 (set (reg:QI 59 [ D.21224 ])
+        (reg:QI 0 ax)) -1 (nil))
+
+(insn 11 10 12 3 class_string.h:86 (set (reg:QI 60 [ retval.68 ])
+        (reg:QI 59 [ D.21224 ])) -1 (nil))
+
+(insn 12 11 13 3 class_string.h:86 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 60 [ retval.68 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 13 12 14 3 class_string.h:86 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 18)
+            (pc))) -1 (nil))
+;; End of basic block 3 -> ( 4 5)
+
+;; Succ edge  4 (fallthru)
+;; Succ edge  5
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 15 14 16 4 class_string.h:86 (set (reg:QI 58 [ D.21227 ])
+        (const_int 0 [0x0])) -1 (nil))
+
+(jump_insn 16 15 17 4 class_string.h:86 (set (pc)
+        (label_ref 21)) -1 (nil))
+;; End of basic block 4 -> ( 6)
+
+;; Succ edge  6
+
+(barrier 17 16 18)
+
+;; Start of basic block ( 3) -> 5
+;; Pred edge  3
+(code_label 18 17 19 5 22 "" [1 uses])
+
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 20 19 21 5 class_string.h:87 (set (reg:QI 58 [ D.21227 ])
+        (const_int 1 [0x1])) -1 (nil))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 21 20 22 6 23 "" [1 uses])
+
+(note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 23 22 24 6 class_string.h:87 (set (reg:QI 61 [ <result> ])
+        (reg:QI 58 [ D.21227 ])) -1 (nil))
+
+(jump_insn 24 23 25 6 class_string.h:87 (set (pc)
+        (label_ref 26)) -1 (nil))
+;; End of basic block 6 -> ( 8)
+
+;; Succ edge  8
+
+(barrier 25 24 34)
+
+;; Start of basic block () -> 7
+(note 34 25 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 28 34 29 7 class_string.h:88 (clobber (reg/i:QI 0 ax)) -1 (nil))
+
+(insn 29 28 30 7 class_string.h:88 (clobber (reg:QI 61 [ <result> ])) -1 (nil))
+
+(jump_insn 30 29 31 7 class_string.h:88 (set (pc)
+        (label_ref 32)) -1 (nil))
+;; End of basic block 7 -> ( 9)
+
+;; Succ edge  9
+
+(barrier 31 30 26)
+
+;; Start of basic block ( 6) -> 8
+;; Pred edge  6
+(code_label 26 31 35 8 21 "" [1 uses])
+
+(note 35 26 27 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 27 35 32 8 class_string.h:88 (set (reg/i:QI 0 ax)
+        (reg:QI 61 [ <result> ])) -1 (nil))
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 7 8) -> 9
+;; Pred edge  7
+;; Pred edge  8 (fallthru)
+(code_label 32 27 36 9 24 "" [1 uses])
+
+(note 36 32 33 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 33 36 0 9 class_string.h:88 (use (reg/i:QI 0 ax)) -1 (nil))
+;; End of basic block 9 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function String::~String() (_ZN6StringD2Ev)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; D.21246D.21246 = this->_p;
+
+(insn 5 4 6 class_string.h:96 (set (reg/f:SI 60)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 6 5 0 class_string.h:96 (set (reg/f:SI 59 [ D.21246 ])
+        (mem/s/f/j:SI (reg/f:SI 60) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; if (D.21246D.21246 != 0B)
+
+(insn 7 6 8 class_string.h:96 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:SI 59 [ D.21246 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 8 7 0 class_string.h:96 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; D.21249D.21249 = this->_p;
+
+(insn 10 9 11 class_string.h:96 (set (reg/f:SI 61)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 11 10 0 class_string.h:96 (set (reg/f:SI 58 [ D.21249 ])
+        (mem/s/f/j:SI (reg/f:SI 61) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; operator delete [] (D.21249D.21249);
+
+(insn 12 11 13 class_string.h:96 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 58 [ D.21249 ])) -1 (nil))
+
+(call_insn 13 12 0 class_string.h:96 (call (mem:QI (symbol_ref:SI ("_ZdaPv") [flags 0x41]  <function_decl 0xb751f500 operator delete []>) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; 
+
+(code_label 14 13 15 26 "" [0 uses])
+
+(note 15 14 0 NOTE_INSN_BASIC_BLOCK)
+
+;; this->_p ={v} 0B;
+
+(insn 16 15 17 class_string.h:97 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 17 16 0 class_string.h:97 (set (mem/s/f/j:SI (reg/f:SI 62) [0 <variable>._p+0 S4 A32])
+        (const_int 0 [0x0])) -1 (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; <L3>:
+
+(code_label 18 17 19 27 "" [0 uses])
+
+(note 19 18 0 NOTE_INSN_BASIC_BLOCK)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:96 (set (reg/f:SI 60)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:96 (set (reg/f:SI 59 [ D.21246 ])
+        (mem/s/f/j:SI (reg/f:SI 60) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 7 6 8 3 class_string.h:96 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:SI 59 [ D.21246 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 8 7 9 3 class_string.h:96 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 14)
+            (pc))) -1 (nil))
+;; End of basic block 3 -> ( 4 5)
+
+;; Succ edge  4 (fallthru)
+;; Succ edge  5
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 9 11 4 class_string.h:96 (set (reg/f:SI 61)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 11 10 12 4 class_string.h:96 (set (reg/f:SI 58 [ D.21249 ])
+        (mem/s/f/j:SI (reg/f:SI 61) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 12 11 13 4 class_string.h:96 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 58 [ D.21249 ])) -1 (nil))
+
+(call_insn 13 12 14 4 class_string.h:96 (call (mem:QI (symbol_ref:SI ("_ZdaPv") [flags 0x41]  <function_decl 0xb751f500 operator delete []>) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+;; End of basic block 4 -> ( 5)
+
+;; Succ edge  5 (fallthru)
+
+;; Start of basic block ( 3 4) -> 5
+;; Pred edge  3
+;; Pred edge  4 (fallthru)
+(code_label 14 13 15 5 26 "" [1 uses])
+
+(note 15 14 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 16 15 17 5 class_string.h:97 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 this+0 S4 A32])) -1 (nil))
+
+(insn 17 16 18 5 class_string.h:97 (set (mem/s/f/j:SI (reg/f:SI 62) [0 <variable>._p+0 S4 A32])
+        (const_int 0 [0x0])) -1 (nil))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 5) -> 6
+;; Pred edge  5 (fallthru)
+(code_label 18 17 19 6 27 "" [0 uses])
+
+(note 19 18 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 6 -> ( 7)
+
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 24 19 21 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 21 24 22 7 class_string.h:98 (set (pc)
+        (label_ref 23)) -1 (nil))
+;; End of basic block 7 -> ( 9)
+
+;; Succ edge  9
+
+(barrier 22 21 20)
+
+;; Start of basic block () -> 8
+(code_label 20 22 25 8 25 "" [0 uses])
+
+(note 25 20 23 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 7 8) -> 9
+;; Pred edge  7
+;; Pred edge  8 (fallthru)
+(code_label 23 25 26 9 28 "" [1 uses])
+
+(note 26 23 0 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 9 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function void String::copy(char**, const char*) (_ZN6String4copyEPPcPKc)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; D.21255D.21255 = strlen (dest);
+
+(insn 5 4 6 class_string.h:102 (set (reg/f:SI 63)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 8 [0x8])) [0 dest+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 class_string.h:102 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 63)) -1 (nil))
+
+(call_insn/i 7 6 8 class_string.h:102 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strlen") [flags 0x41]  <function_decl 0xb74d6780 strlen>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32]))
+        (nil)))
+
+(insn 8 7 0 class_string.h:102 (set (reg:SI 62 [ D.21255 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; D.21256D.21256 = D.21255D.21255 + 1;
+
+(insn 9 8 0 class_string.h:102 (parallel [
+            (set (reg:SI 61 [ D.21256 ])
+                (plus:SI (reg:SI 62 [ D.21255 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+;; D.21257D.21257 = operator new [] (D.21256D.21256);
+
+(insn 10 9 11 class_string.h:102 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 61 [ D.21256 ])) -1 (nil))
+
+(call_insn 11 10 12 class_string.h:102 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_Znaj") [flags 0x41]  <function_decl 0xb751f400 operator new []>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (nil)
+    (nil))
+
+(insn 12 11 0 class_string.h:102 (set (reg/f:SI 60 [ D.21257 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; D.21258D.21258 = (char *) D.21257D.21257;
+
+(insn 13 12 0 class_string.h:102 (set (reg/f:SI 59 [ D.21258 ])
+        (reg/f:SI 60 [ D.21257 ])) -1 (nil))
+
+;; *src ={v} D.21258D.21258;
+
+(insn 14 13 15 class_string.h:102 (set (reg/f:SI 64)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 src+0 S4 A32])) -1 (nil))
+
+(insn 15 14 0 class_string.h:102 (set (mem/f:SI (reg/f:SI 64) [0 S4 A32])
+        (reg/f:SI 59 [ D.21258 ])) -1 (nil))
+
+;; D.21259D.21259 = *src;
+
+(insn 16 15 17 class_string.h:103 (set (reg/f:SI 65)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 src+0 S4 A32])) -1 (nil))
+
+(insn 17 16 0 class_string.h:103 (set (reg/f:SI 58 [ D.21259 ])
+        (mem/f:SI (reg/f:SI 65) [0 S4 A32])) -1 (nil))
+
+;; strcpy (D.21259D.21259, dest);
+
+(insn 18 17 19 class_string.h:103 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 8 [0x8])) [0 dest+0 S4 A32])) -1 (nil))
+
+(insn 19 18 20 class_string.h:103 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 66)) -1 (nil))
+
+(insn 20 19 21 class_string.h:103 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 58 [ D.21259 ])) -1 (nil))
+
+(call_insn 21 20 0 class_string.h:103 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strcpy") [flags 0x41]  <function_decl 0xb74d6180 strcpy>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:102 (set (reg/f:SI 63)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 8 [0x8])) [0 dest+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:102 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 63)) -1 (nil))
+
+(call_insn/i 7 6 8 3 class_string.h:102 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strlen") [flags 0x41]  <function_decl 0xb74d6780 strlen>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32]))
+        (nil)))
+
+(insn 8 7 9 3 class_string.h:102 (set (reg:SI 62 [ D.21255 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+(insn 9 8 10 3 class_string.h:102 (parallel [
+            (set (reg:SI 61 [ D.21256 ])
+                (plus:SI (reg:SI 62 [ D.21255 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 10 9 11 3 class_string.h:102 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 61 [ D.21256 ])) -1 (nil))
+
+(call_insn 11 10 12 3 class_string.h:102 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_Znaj") [flags 0x41]  <function_decl 0xb751f400 operator new []>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (nil)
+    (nil))
+
+(insn 12 11 13 3 class_string.h:102 (set (reg/f:SI 60 [ D.21257 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+(insn 13 12 14 3 class_string.h:102 (set (reg/f:SI 59 [ D.21258 ])
+        (reg/f:SI 60 [ D.21257 ])) -1 (nil))
+
+(insn 14 13 15 3 class_string.h:102 (set (reg/f:SI 64)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 src+0 S4 A32])) -1 (nil))
+
+(insn 15 14 16 3 class_string.h:102 (set (mem/f:SI (reg/f:SI 64) [0 S4 A32])
+        (reg/f:SI 59 [ D.21258 ])) -1 (nil))
+
+(insn 16 15 17 3 class_string.h:103 (set (reg/f:SI 65)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 src+0 S4 A32])) -1 (nil))
+
+(insn 17 16 18 3 class_string.h:103 (set (reg/f:SI 58 [ D.21259 ])
+        (mem/f:SI (reg/f:SI 65) [0 S4 A32])) -1 (nil))
+
+(insn 18 17 19 3 class_string.h:103 (set (reg/f:SI 66)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 8 [0x8])) [0 dest+0 S4 A32])) -1 (nil))
+
+(insn 19 18 20 3 class_string.h:103 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 66)) -1 (nil))
+
+(insn 20 19 21 3 class_string.h:103 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 58 [ D.21259 ])) -1 (nil))
+
+(call_insn 21 20 26 3 class_string.h:103 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strcpy") [flags 0x41]  <function_decl 0xb74d6180 strcpy>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+;; End of basic block 3 -> ( 4)
+
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 26 21 23 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 23 26 24 4 class_string.h:104 (set (pc)
+        (label_ref 25)) -1 (nil))
+;; End of basic block 4 -> ( 6)
+
+;; Succ edge  6
+
+(barrier 24 23 22)
+
+;; Start of basic block () -> 5
+(code_label 22 24 27 5 29 "" [0 uses])
+
+(note 27 22 25 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 25 27 28 6 30 "" [1 uses])
+
+(note 28 25 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 6 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function std::ostream& operator<<(std::ostream&, String&) (_ZlsRSoR6String)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; D.21264D.21264 = str->_p;
+
+(insn 5 4 6 class_string.h:110 (set (reg/f:SI 61)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 0 class_string.h:110 (set (reg/f:SI 59 [ D.21264 ])
+        (mem/s/f/j:SI (reg/f:SI 61) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+;; operator<< (_cout, D.21264D.21264);
+
+(insn 7 6 8 class_string.h:110 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 59 [ D.21264 ])) -1 (nil))
+
+(insn 8 7 9 class_string.h:110 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 _cout+0 S4 A32])) -1 (nil))
+
+(insn 9 8 10 class_string.h:110 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 62)) -1 (nil))
+
+(call_insn 10 9 0 class_string.h:110 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc") [flags 0x41]  <function_decl 0xb6c49300 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (nil)
+    (nil))
+
+;; D.21265D.21265 = _cout;
+
+(insn 11 10 0 class_string.h:111 (set (reg/f:SI 58 [ D.21265 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 _cout+0 S4 A32])) -1 (nil))
+
+;; return D.21265D.21265;
+
+(insn 12 11 13 class_string.h:111 (set (reg:SI 60 [ <result> ])
+        (reg/f:SI 58 [ D.21265 ])) -1 (nil))
+
+(jump_insn 13 12 14 class_string.h:111 (set (pc)
+        (label_ref 0)) -1 (nil))
+
+(barrier 14 13 0)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.h:110 (set (reg/f:SI 61)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 str+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 class_string.h:110 (set (reg/f:SI 59 [ D.21264 ])
+        (mem/s/f/j:SI (reg/f:SI 61) [0 <variable>._p+0 S4 A32])) -1 (nil))
+
+(insn 7 6 8 3 class_string.h:110 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg/f:SI 59 [ D.21264 ])) -1 (nil))
+
+(insn 8 7 9 3 class_string.h:110 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 _cout+0 S4 A32])) -1 (nil))
+
+(insn 9 8 10 3 class_string.h:110 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 62)) -1 (nil))
+
+(call_insn 10 9 11 3 class_string.h:110 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc") [flags 0x41]  <function_decl 0xb6c49300 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (nil)
+    (nil))
+
+(insn 11 10 12 3 class_string.h:111 (set (reg/f:SI 58 [ D.21265 ])
+        (mem/f/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 _cout+0 S4 A32])) -1 (nil))
+
+(insn 12 11 13 3 class_string.h:111 (set (reg:SI 60 [ <result> ])
+        (reg/f:SI 58 [ D.21265 ])) -1 (nil))
+
+(jump_insn 13 12 14 3 class_string.h:111 (set (pc)
+        (label_ref 15)) -1 (nil))
+;; End of basic block 3 -> ( 5)
+
+;; Succ edge  5
+
+(barrier 14 13 23)
+
+;; Start of basic block () -> 4
+(note 23 14 17 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 17 23 18 4 class_string.h:112 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 18 17 19 4 class_string.h:112 (clobber (reg:SI 60 [ <result> ])) -1 (nil))
+
+(jump_insn 19 18 20 4 class_string.h:112 (set (pc)
+        (label_ref 21)) -1 (nil))
+;; End of basic block 4 -> ( 6)
+
+;; Succ edge  6
+
+(barrier 20 19 15)
+
+;; Start of basic block ( 3) -> 5
+;; Pred edge  3
+(code_label 15 20 24 5 31 "" [1 uses])
+
+(note 24 15 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 16 24 21 5 class_string.h:112 (set (reg/i:SI 0 ax)
+        (reg:SI 60 [ <result> ])) -1 (nil))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 21 16 25 6 32 "" [1 uses])
+
+(note 25 21 22 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 22 25 0 6 class_string.h:112 (use (reg/i:SI 0 ax)) -1 (nil))
+;; End of basic block 6 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function int main() (main)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; __comp_ctor  (&s1, &"1234"[0]);
+
+(insn 5 4 6 class_string.cpp:4 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb6b6bf60>)) -1 (nil))
+
+(insn 6 5 7 class_string.cpp:4 (parallel [
+            (set (reg:SI 75)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 7 6 8 class_string.cpp:4 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 75)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 8 7 0 class_string.cpp:4 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringC1EPKc") [flags 0x1]  <function_decl 0xb6b1c300 __comp_ctor >) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (nil)
+    (nil))
+
+;; D.21277D.21277 = operator<< (&cout, &s1);
+
+(insn 9 8 10 class_string.cpp:5 (parallel [
+            (set (reg:SI 76)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 10 9 11 class_string.cpp:5 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 76)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 11 10 12 class_string.cpp:5 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 12 11 13 class_string.cpp:5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZlsRSoR6String") [flags 0x3]  <function_decl 0xb6b0f780 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (nil))
+
+(insn 13 12 0 class_string.cpp:5 (set (reg/f:SI 73 [ D.21277 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; operator<< (D.21277D.21277, endl);
+
+(insn 15 14 16 class_string.cpp:5 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 16 15 17 class_string.cpp:5 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 73 [ D.21277 ])) -1 (nil))
+
+(call_insn 17 16 0 class_string.cpp:5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; __comp_ctor  (&s2, &s1);
+
+(insn 19 18 20 class_string.cpp:6 (parallel [
+            (set (reg:SI 77)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 20 19 21 class_string.cpp:6 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 77)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 21 20 22 class_string.cpp:6 (parallel [
+            (set (reg:SI 78)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 22 21 23 class_string.cpp:6 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 78)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(call_insn 23 22 0 class_string.cpp:6 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringC1ERKS_") [flags 0x1]  <function_decl 0xb6b1c200 __comp_ctor >) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; D.21278D.21278 = operator<< (&cout, &s2);
+
+(insn 25 24 26 class_string.cpp:7 (parallel [
+            (set (reg:SI 79)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 26 25 27 class_string.cpp:7 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 79)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(insn 27 26 28 class_string.cpp:7 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 28 27 29 class_string.cpp:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZlsRSoR6String") [flags 0x3]  <function_decl 0xb6b0f780 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+
+(insn 29 28 0 class_string.cpp:7 (set (reg/f:SI 72 [ D.21278 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 6
+
+;; operator<< (D.21278D.21278, endl);
+
+(insn 31 30 32 class_string.cpp:7 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 32 31 33 class_string.cpp:7 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 72 [ D.21278 ])) -1 (nil))
+
+(call_insn 33 32 0 class_string.cpp:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 7
+
+;; D.21280D.21280 = operator== (&s1, &s2);
+
+(insn 35 34 36 class_string.cpp:8 (parallel [
+            (set (reg:SI 80)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 36 35 37 class_string.cpp:8 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 80)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(insn 37 36 38 class_string.cpp:8 (parallel [
+            (set (reg:SI 81)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 38 37 39 class_string.cpp:8 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 81)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 39 38 40 class_string.cpp:8 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringeqERKS_") [flags 0x1]  <function_decl 0xb6b0ff80 operator==>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 40 39 0 class_string.cpp:8 (set (reg:QI 70 [ D.21280 ])
+        (reg:QI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 8
+
+;; retval.69 = D.21280D.21280;
+
+(insn 42 41 0 class_string.cpp:8 (set (reg:QI 71 [ retval.69 ])
+        (reg:QI 70 [ D.21280 ])) -1 (nil))
+
+;; if (retval.69 != 0)
+
+(insn 43 42 44 class_string.cpp:8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 71 [ retval.69 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 44 43 0 class_string.cpp:8 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 9
+
+;; D.21283D.21283 = operator<< (&cout, &"s1==s2"[0]);
+
+(insn 46 45 47 class_string.cpp:9 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb6b6b8e0>)) -1 (nil))
+
+(insn 47 46 48 class_string.cpp:9 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 48 47 49 class_string.cpp:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc") [flags 0x41]  <function_decl 0xb6c49300 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+
+(insn 49 48 0 class_string.cpp:9 (set (reg/f:SI 69 [ D.21283 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 10
+
+;; operator<< (D.21283D.21283, endl);
+
+(insn 51 50 52 class_string.cpp:9 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 52 51 53 class_string.cpp:9 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 69 [ D.21283 ])) -1 (nil))
+
+(call_insn 53 52 0 class_string.cpp:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 11
+
+;; 
+
+(code_label 56 55 57 34 "" [0 uses])
+
+(note 57 56 0 NOTE_INSN_BASIC_BLOCK)
+
+;; D.21285D.21285 = operator<< (&cout, &"s1!=s2"[0]);
+
+(insn 58 57 59 class_string.cpp:12 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC2") [flags 0x2]  <string_cst 0xb6b6bde0>)) -1 (nil))
+
+(insn 59 58 60 class_string.cpp:12 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 60 59 61 class_string.cpp:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc") [flags 0x41]  <function_decl 0xb6c49300 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+
+(insn 61 60 0 class_string.cpp:12 (set (reg/f:SI 68 [ D.21285 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 12
+
+;; operator<< (D.21285D.21285, endl);
+
+(insn 63 62 64 class_string.cpp:12 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 64 63 65 class_string.cpp:12 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 68 [ D.21285 ])) -1 (nil))
+
+(call_insn 65 64 0 class_string.cpp:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 13
+
+;; 
+
+(code_label 66 65 67 35 "" [0 uses])
+
+(note 67 66 0 NOTE_INSN_BASIC_BLOCK)
+
+;; __comp_ctor  (&s3, &""[0]);
+
+(insn 68 67 69 class_string.cpp:14 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC3") [flags 0x2]  <string_cst 0xb6b745e8>)) -1 (nil))
+
+(insn 69 68 70 class_string.cpp:14 (parallel [
+            (set (reg:SI 82)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 70 69 71 class_string.cpp:14 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 82)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 71 70 0 class_string.cpp:14 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringC1EPKc") [flags 0x1]  <function_decl 0xb6b1c300 __comp_ctor >) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 14
+
+;; operator= (&s3, &s1);
+
+(insn 73 72 74 class_string.cpp:15 (parallel [
+            (set (reg:SI 83)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 74 73 75 class_string.cpp:15 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 83)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 75 74 76 class_string.cpp:15 (parallel [
+            (set (reg:SI 84)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 76 75 77 class_string.cpp:15 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 84)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 77 76 0 class_string.cpp:15 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringaSERKS_") [flags 0x1]  <function_decl 0xb6b0fa00 operator=>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 15
+
+;; D.21286D.21286 = operator<< (&cout, &s1);
+
+(insn 79 78 80 class_string.cpp:16 (parallel [
+            (set (reg:SI 85)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 80 79 81 class_string.cpp:16 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 85)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 81 80 82 class_string.cpp:16 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 82 81 83 class_string.cpp:16 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZlsRSoR6String") [flags 0x3]  <function_decl 0xb6b0f780 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+
+(insn 83 82 0 class_string.cpp:16 (set (reg/f:SI 67 [ D.21286 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 16
+
+;; operator<< (D.21286D.21286, endl);
+
+(insn 85 84 86 class_string.cpp:16 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 86 85 87 class_string.cpp:16 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 67 [ D.21286 ])) -1 (nil))
+
+(call_insn 87 86 0 class_string.cpp:16 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 17
+
+;; D.21287D.21287 = size (&s1);
+
+(insn 89 88 90 class_string.cpp:17 (parallel [
+            (set (reg:SI 86)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 90 89 91 class_string.cpp:17 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 86)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 91 90 92 class_string.cpp:17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZNK6String4sizeEv") [flags 0x1]  <function_decl 0xb6b0fb00 size>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 92 91 0 class_string.cpp:17 (set (reg:SI 66 [ D.21287 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 18
+
+;; D.21288D.21288 = operator<< (&cout, D.21287D.21287);
+
+(insn 94 93 95 class_string.cpp:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 66 [ D.21287 ])) -1 (nil))
+
+(insn 95 94 96 class_string.cpp:17 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 96 95 97 class_string.cpp:17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEi") [flags 0x41]  <function_decl 0xb6c1f580 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+
+(insn 97 96 0 class_string.cpp:17 (set (reg/f:SI 65 [ D.21288 ])
+        (reg:SI 0 ax)) -1 (nil))
+
+;; Generating RTL for gimple basic block 19
+
+;; operator<< (D.21288D.21288, endl);
+
+(insn 99 98 100 class_string.cpp:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 100 99 101 class_string.cpp:17 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 65 [ D.21288 ])) -1 (nil))
+
+(call_insn 101 100 0 class_string.cpp:17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 20
+
+;; D.21289D.21289 = 0;
+
+(insn 103 102 0 class_string.cpp:18 (set (reg:SI 64 [ D.21289 ])
+        (const_int 0 [0x0])) -1 (nil))
+
+;; __comp_dtor  (&s3);
+
+(insn 104 103 105 class_string.cpp:18 (parallel [
+            (set (reg:SI 87)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 105 104 106 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 87)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 106 105 0 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 21
+
+;; <L3>:
+
+(code_label 109 108 110 37 "" [0 uses])
+
+(note 110 109 0 NOTE_INSN_BASIC_BLOCK)
+
+;; save_filt.74 = [filter_expr] <<<filter object>>>;
+
+(insn 111 110 0 class_string.cpp:18 (set (reg:SI 62 [ save_filt.74 ])
+        (reg:SI 88)) -1 (nil))
+
+;; save_eptr.73 = [exc_ptr_expr] <<<exception object>>>;
+
+(insn 112 111 0 class_string.cpp:18 (set (reg/f:SI 63 [ save_eptr.73 ])
+        (reg:SI 89)) -1 (nil))
+
+;; __comp_dtor  (&s3);
+
+(insn 113 112 114 class_string.cpp:18 (parallel [
+            (set (reg:SI 90)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 114 113 115 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 90)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 115 114 0 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; <<<exception object>>> = save_eptr.73;
+
+(insn 116 115 0 class_string.cpp:18 (set (reg:SI 89)
+        (reg/f:SI 63 [ save_eptr.73 ])) -1 (nil))
+
+;; <<<filter object>>> = save_filt.74;
+
+(insn 117 116 0 class_string.cpp:18 (set (reg:SI 88)
+        (reg:SI 62 [ save_filt.74 ])) -1 (nil))
+
+;; resx 3
+
+(jump_insn 118 117 119 class_string.cpp:18 (resx 3) -1 (nil))
+
+(barrier 119 118 0)
+
+;; Generating RTL for gimple basic block 22
+
+;; <L6>:
+
+(code_label 120 119 121 38 "" [0 uses])
+
+(note 121 120 0 NOTE_INSN_BASIC_BLOCK)
+
+;; save_filt.76 = [filter_expr] <<<filter object>>>;
+
+(insn 122 121 0 class_string.cpp:18 (set (reg:SI 60 [ save_filt.76 ])
+        (reg:SI 88)) -1 (nil))
+
+;; save_eptr.75 = [exc_ptr_expr] <<<exception object>>>;
+
+(insn 123 122 0 class_string.cpp:18 (set (reg/f:SI 61 [ save_eptr.75 ])
+        (reg:SI 89)) -1 (nil))
+
+;; __comp_dtor  (&s2);
+
+(insn 124 123 125 class_string.cpp:18 (parallel [
+            (set (reg:SI 91)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 125 124 126 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 91)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(call_insn 126 125 0 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; <<<exception object>>> = save_eptr.75;
+
+(insn 127 126 0 class_string.cpp:18 (set (reg:SI 89)
+        (reg/f:SI 61 [ save_eptr.75 ])) -1 (nil))
+
+;; <<<filter object>>> = save_filt.76;
+
+(insn 128 127 0 class_string.cpp:18 (set (reg:SI 88)
+        (reg:SI 60 [ save_filt.76 ])) -1 (nil))
+
+;; resx 2
+
+(jump_insn 129 128 130 class_string.cpp:18 (resx 2) -1 (nil))
+
+(barrier 130 129 0)
+
+;; Generating RTL for gimple basic block 23
+
+;; 
+
+(code_label 131 130 132 36 "" [0 uses])
+
+(note 132 131 0 NOTE_INSN_BASIC_BLOCK)
+
+;; __comp_dtor  (&s2);
+
+(insn 133 132 134 class_string.cpp:18 (parallel [
+            (set (reg:SI 92)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 134 133 135 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 92)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(call_insn 135 134 0 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 24
+
+;; <L9>:
+
+(code_label 138 137 139 40 "" [0 uses])
+
+(note 139 138 0 NOTE_INSN_BASIC_BLOCK)
+
+;; save_filt.78 = [filter_expr] <<<filter object>>>;
+
+(insn 140 139 0 class_string.cpp:18 (set (reg:SI 58 [ save_filt.78 ])
+        (reg:SI 88)) -1 (nil))
+
+;; save_eptr.77 = [exc_ptr_expr] <<<exception object>>>;
+
+(insn 141 140 0 class_string.cpp:18 (set (reg/f:SI 59 [ save_eptr.77 ])
+        (reg:SI 89)) -1 (nil))
+
+;; __comp_dtor  (&s1);
+
+(insn 142 141 143 class_string.cpp:18 (parallel [
+            (set (reg:SI 93)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 143 142 144 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 93)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 144 143 0 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; <<<exception object>>> = save_eptr.77;
+
+(insn 145 144 0 class_string.cpp:18 (set (reg:SI 89)
+        (reg/f:SI 59 [ save_eptr.77 ])) -1 (nil))
+
+;; <<<filter object>>> = save_filt.78;
+
+(insn 146 145 0 class_string.cpp:18 (set (reg:SI 88)
+        (reg:SI 58 [ save_filt.78 ])) -1 (nil))
+
+;; resx 1
+
+(jump_insn 147 146 148 class_string.cpp:18 (resx 1) -1 (nil))
+
+(barrier 148 147 0)
+
+;; Generating RTL for gimple basic block 25
+
+;; 
+
+(code_label 149 148 150 39 "" [0 uses])
+
+(note 150 149 0 NOTE_INSN_BASIC_BLOCK)
+
+;; __comp_dtor  (&s1);
+
+(insn 151 150 152 class_string.cpp:18 (parallel [
+            (set (reg:SI 94)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 152 151 153 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 94)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 153 152 0 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; return D.21289D.21289;
+
+(insn 154 153 155 class_string.cpp:18 (set (reg:SI 74 [ <result> ])
+        (reg:SI 64 [ D.21289 ])) -1 (nil))
+
+(jump_insn 155 154 156 class_string.cpp:18 (set (pc)
+        (label_ref 0)) -1 (nil))
+
+(barrier 156 155 0)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.cpp:4 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb6b6bf60>)) -1 (nil))
+
+(insn 6 5 7 3 class_string.cpp:4 (parallel [
+            (set (reg:SI 75)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 7 6 8 3 class_string.cpp:4 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 75)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 8 7 9 3 class_string.cpp:4 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringC1EPKc") [flags 0x1]  <function_decl 0xb6b1c300 __comp_ctor >) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (nil)
+    (nil))
+
+(insn 9 8 10 3 class_string.cpp:5 (parallel [
+            (set (reg:SI 76)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 10 9 11 3 class_string.cpp:5 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 76)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 11 10 12 3 class_string.cpp:5 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 12 11 166 3 class_string.cpp:5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZlsRSoR6String") [flags 0x3]  <function_decl 0xb6b0f780 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (nil))
+;; End of basic block 3 -> ( 32 4)
+
+;; Succ edge  32 (ab,abcall,eh)
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 166 12 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 13 166 14 4 class_string.cpp:5 (set (reg/f:SI 73 [ D.21277 ])
+        (reg:SI 0 ax)) -1 (nil))
+;; End of basic block 4 -> ( 5)
+
+;; Succ edge  5 (fallthru)
+
+;; Start of basic block ( 4) -> 5
+;; Pred edge  4 (fallthru)
+(note 14 13 15 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 15 14 16 5 class_string.cpp:5 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 16 15 17 5 class_string.cpp:5 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 73 [ D.21277 ])) -1 (nil))
+
+(call_insn 17 16 18 5 class_string.cpp:5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (nil))
+;; End of basic block 5 -> ( 6 32)
+
+;; Succ edge  6 (fallthru)
+;; Succ edge  32 (ab,abcall,eh)
+
+;; Start of basic block ( 5) -> 6
+;; Pred edge  5 (fallthru)
+(note 18 17 19 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 19 18 20 6 class_string.cpp:6 (parallel [
+            (set (reg:SI 77)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 20 19 21 6 class_string.cpp:6 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 77)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 21 20 22 6 class_string.cpp:6 (parallel [
+            (set (reg:SI 78)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 22 21 23 6 class_string.cpp:6 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 78)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(call_insn 23 22 24 6 class_string.cpp:6 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringC1ERKS_") [flags 0x1]  <function_decl 0xb6b1c200 __comp_ctor >) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (expr_list:REG_EH_REGION (const_int 1 [0x1])
+        (nil))
+    (nil))
+;; End of basic block 6 -> ( 7 32)
+
+;; Succ edge  7 (fallthru)
+;; Succ edge  32 (ab,abcall,eh)
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 24 23 25 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 25 24 26 7 class_string.cpp:7 (parallel [
+            (set (reg:SI 79)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 26 25 27 7 class_string.cpp:7 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 79)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(insn 27 26 28 7 class_string.cpp:7 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 28 27 167 7 class_string.cpp:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZlsRSoR6String") [flags 0x3]  <function_decl 0xb6b0f780 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+;; End of basic block 7 -> ( 30 8)
+
+;; Succ edge  30 (ab,abcall,eh)
+;; Succ edge  8 (fallthru)
+
+;; Start of basic block ( 7) -> 8
+;; Pred edge  7 (fallthru)
+(note 167 28 29 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 29 167 30 8 class_string.cpp:7 (set (reg/f:SI 72 [ D.21278 ])
+        (reg:SI 0 ax)) -1 (nil))
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 8) -> 9
+;; Pred edge  8 (fallthru)
+(note 30 29 31 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 31 30 32 9 class_string.cpp:7 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 32 31 33 9 class_string.cpp:7 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 72 [ D.21278 ])) -1 (nil))
+
+(call_insn 33 32 34 9 class_string.cpp:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+;; End of basic block 9 -> ( 10 30)
+
+;; Succ edge  10 (fallthru)
+;; Succ edge  30 (ab,abcall,eh)
+
+;; Start of basic block ( 9) -> 10
+;; Pred edge  9 (fallthru)
+(note 34 33 35 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 35 34 36 10 class_string.cpp:8 (parallel [
+            (set (reg:SI 80)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 36 35 37 10 class_string.cpp:8 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 80)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(insn 37 36 38 10 class_string.cpp:8 (parallel [
+            (set (reg:SI 81)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 38 37 39 10 class_string.cpp:8 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 81)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 39 38 40 10 class_string.cpp:8 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringeqERKS_") [flags 0x1]  <function_decl 0xb6b0ff80 operator==>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 40 39 41 10 class_string.cpp:8 (set (reg:QI 70 [ D.21280 ])
+        (reg:QI 0 ax)) -1 (nil))
+;; End of basic block 10 -> ( 11)
+
+;; Succ edge  11 (fallthru)
+
+;; Start of basic block ( 10) -> 11
+;; Pred edge  10 (fallthru)
+(note 41 40 42 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 42 41 43 11 class_string.cpp:8 (set (reg:QI 71 [ retval.69 ])
+        (reg:QI 70 [ D.21280 ])) -1 (nil))
+
+(insn 43 42 44 11 class_string.cpp:8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 71 [ retval.69 ])
+            (const_int 0 [0x0]))) -1 (nil))
+
+(jump_insn 44 43 45 11 class_string.cpp:8 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 56)
+            (pc))) -1 (nil))
+;; End of basic block 11 -> ( 12 16)
+
+;; Succ edge  12 (fallthru)
+;; Succ edge  16
+
+;; Start of basic block ( 11) -> 12
+;; Pred edge  11 (fallthru)
+(note 45 44 46 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 46 45 47 12 class_string.cpp:9 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb6b6b8e0>)) -1 (nil))
+
+(insn 47 46 48 12 class_string.cpp:9 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 48 47 168 12 class_string.cpp:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc") [flags 0x41]  <function_decl 0xb6c49300 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+;; End of basic block 12 -> ( 30 13)
+
+;; Succ edge  30 (ab,abcall,eh)
+;; Succ edge  13 (fallthru)
+
+;; Start of basic block ( 12) -> 13
+;; Pred edge  12 (fallthru)
+(note 168 48 49 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 49 168 50 13 class_string.cpp:9 (set (reg/f:SI 69 [ D.21283 ])
+        (reg:SI 0 ax)) -1 (nil))
+;; End of basic block 13 -> ( 14)
+
+;; Succ edge  14 (fallthru)
+
+;; Start of basic block ( 13) -> 14
+;; Pred edge  13 (fallthru)
+(note 50 49 51 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+
+(insn 51 50 52 14 class_string.cpp:9 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 52 51 53 14 class_string.cpp:9 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 69 [ D.21283 ])) -1 (nil))
+
+(call_insn 53 52 169 14 class_string.cpp:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+;; End of basic block 14 -> ( 30 15)
+
+;; Succ edge  30 (ab,abcall,eh)
+;; Succ edge  15 (fallthru)
+
+;; Start of basic block ( 14) -> 15
+;; Pred edge  14 (fallthru)
+(note 169 53 54 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 54 169 55 15 class_string.cpp:9 (set (pc)
+        (label_ref 66)) -1 (nil))
+;; End of basic block 15 -> ( 19)
+
+;; Succ edge  19
+
+(barrier 55 54 56)
+
+;; Start of basic block ( 11) -> 16
+;; Pred edge  11
+(code_label 56 55 57 16 34 "" [1 uses])
+
+(note 57 56 58 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+
+(insn 58 57 59 16 class_string.cpp:12 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC2") [flags 0x2]  <string_cst 0xb6b6bde0>)) -1 (nil))
+
+(insn 59 58 60 16 class_string.cpp:12 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 60 59 170 16 class_string.cpp:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc") [flags 0x41]  <function_decl 0xb6c49300 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+;; End of basic block 16 -> ( 30 17)
+
+;; Succ edge  30 (ab,abcall,eh)
+;; Succ edge  17 (fallthru)
+
+;; Start of basic block ( 16) -> 17
+;; Pred edge  16 (fallthru)
+(note 170 60 61 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+
+(insn 61 170 62 17 class_string.cpp:12 (set (reg/f:SI 68 [ D.21285 ])
+        (reg:SI 0 ax)) -1 (nil))
+;; End of basic block 17 -> ( 18)
+
+;; Succ edge  18 (fallthru)
+
+;; Start of basic block ( 17) -> 18
+;; Pred edge  17 (fallthru)
+(note 62 61 63 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+
+(insn 63 62 64 18 class_string.cpp:12 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 64 63 65 18 class_string.cpp:12 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 68 [ D.21285 ])) -1 (nil))
+
+(call_insn 65 64 66 18 class_string.cpp:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+;; End of basic block 18 -> ( 19 30)
+
+;; Succ edge  19 (fallthru)
+;; Succ edge  30 (ab,abcall,eh)
+
+;; Start of basic block ( 15 18) -> 19
+;; Pred edge  15
+;; Pred edge  18 (fallthru)
+(code_label 66 65 67 19 35 "" [1 uses])
+
+(note 67 66 68 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+
+(insn 68 67 69 19 class_string.cpp:14 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC3") [flags 0x2]  <string_cst 0xb6b745e8>)) -1 (nil))
+
+(insn 69 68 70 19 class_string.cpp:14 (parallel [
+            (set (reg:SI 82)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 70 69 71 19 class_string.cpp:14 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 82)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 71 70 72 19 class_string.cpp:14 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringC1EPKc") [flags 0x1]  <function_decl 0xb6b1c300 __comp_ctor >) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (expr_list:REG_EH_REGION (const_int 2 [0x2])
+        (nil))
+    (nil))
+;; End of basic block 19 -> ( 20 30)
+
+;; Succ edge  20 (fallthru)
+;; Succ edge  30 (ab,abcall,eh)
+
+;; Start of basic block ( 19) -> 20
+;; Pred edge  19 (fallthru)
+(note 72 71 73 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+
+(insn 73 72 74 20 class_string.cpp:15 (parallel [
+            (set (reg:SI 83)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 74 73 75 20 class_string.cpp:15 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 83)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 75 74 76 20 class_string.cpp:15 (parallel [
+            (set (reg:SI 84)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 76 75 77 20 class_string.cpp:15 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 84)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 77 76 78 20 class_string.cpp:15 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZN6StringaSERKS_") [flags 0x1]  <function_decl 0xb6b0fa00 operator=>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+;; End of basic block 20 -> ( 21 29)
+
+;; Succ edge  21 (fallthru)
+;; Succ edge  29 (ab,abcall,eh)
+
+;; Start of basic block ( 20) -> 21
+;; Pred edge  20 (fallthru)
+(note 78 77 79 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+
+(insn 79 78 80 21 class_string.cpp:16 (parallel [
+            (set (reg:SI 85)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 80 79 81 21 class_string.cpp:16 (set (mem/f/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 85)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(insn 81 80 82 21 class_string.cpp:16 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 82 81 171 21 class_string.cpp:16 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZlsRSoR6String") [flags 0x3]  <function_decl 0xb6b0f780 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+;; End of basic block 21 -> ( 29 22)
+
+;; Succ edge  29 (ab,abcall,eh)
+;; Succ edge  22 (fallthru)
+
+;; Start of basic block ( 21) -> 22
+;; Pred edge  21 (fallthru)
+(note 171 82 83 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+
+(insn 83 171 84 22 class_string.cpp:16 (set (reg/f:SI 67 [ D.21286 ])
+        (reg:SI 0 ax)) -1 (nil))
+;; End of basic block 22 -> ( 23)
+
+;; Succ edge  23 (fallthru)
+
+;; Start of basic block ( 22) -> 23
+;; Pred edge  22 (fallthru)
+(note 84 83 85 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+
+(insn 85 84 86 23 class_string.cpp:16 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 86 85 87 23 class_string.cpp:16 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 67 [ D.21286 ])) -1 (nil))
+
+(call_insn 87 86 88 23 class_string.cpp:16 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+;; End of basic block 23 -> ( 24 29)
+
+;; Succ edge  24 (fallthru)
+;; Succ edge  29 (ab,abcall,eh)
+
+;; Start of basic block ( 23) -> 24
+;; Pred edge  23 (fallthru)
+(note 88 87 89 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+
+(insn 89 88 90 24 class_string.cpp:17 (parallel [
+            (set (reg:SI 86)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 90 89 91 24 class_string.cpp:17 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 86)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 91 90 92 24 class_string.cpp:17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref/i:SI ("_ZNK6String4sizeEv") [flags 0x1]  <function_decl 0xb6b0fb00 size>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 92 91 93 24 class_string.cpp:17 (set (reg:SI 66 [ D.21287 ])
+        (reg:SI 0 ax)) -1 (nil))
+;; End of basic block 24 -> ( 25)
+
+;; Succ edge  25 (fallthru)
+
+;; Start of basic block ( 24) -> 25
+;; Pred edge  24 (fallthru)
+(note 93 92 94 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+
+(insn 94 93 95 25 class_string.cpp:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 66 [ D.21287 ])) -1 (nil))
+
+(insn 95 94 96 25 class_string.cpp:17 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4cout") [flags 0x40]  <var_decl 0xb6af3630 cout>)) -1 (nil))
+
+(call_insn 96 95 172 25 class_string.cpp:17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEi") [flags 0x41]  <function_decl 0xb6c1f580 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+;; End of basic block 25 -> ( 29 26)
+
+;; Succ edge  29 (ab,abcall,eh)
+;; Succ edge  26 (fallthru)
+
+;; Start of basic block ( 25) -> 26
+;; Pred edge  25 (fallthru)
+(note 172 96 97 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+
+(insn 97 172 98 26 class_string.cpp:17 (set (reg/f:SI 65 [ D.21288 ])
+        (reg:SI 0 ax)) -1 (nil))
+;; End of basic block 26 -> ( 27)
+
+;; Succ edge  27 (fallthru)
+
+;; Start of basic block ( 26) -> 27
+;; Pred edge  26 (fallthru)
+(note 98 97 99 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+
+(insn 99 98 100 27 class_string.cpp:17 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xb6c41d00 endl>)) -1 (nil))
+
+(insn 100 99 101 27 class_string.cpp:17 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 65 [ D.21288 ])) -1 (nil))
+
+(call_insn 101 100 102 27 class_string.cpp:17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xb6c1fd00 operator<<>) [0 S1 A8])
+            (const_int 8 [0x8]))) -1 (expr_list:REG_EH_REGION (const_int 3 [0x3])
+        (nil))
+    (nil))
+;; End of basic block 27 -> ( 28 29)
+
+;; Succ edge  28 (fallthru)
+;; Succ edge  29 (ab,abcall,eh)
+
+;; Start of basic block ( 27) -> 28
+;; Pred edge  27 (fallthru)
+(note 102 101 103 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+
+(insn 103 102 104 28 class_string.cpp:18 (set (reg:SI 64 [ D.21289 ])
+        (const_int 0 [0x0])) -1 (nil))
+
+(insn 104 103 105 28 class_string.cpp:18 (parallel [
+            (set (reg:SI 87)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 105 104 106 28 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 87)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 106 105 107 28 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(jump_insn 107 106 108 28 class_string.cpp:18 (set (pc)
+        (label_ref 131)) -1 (nil))
+;; End of basic block 28 -> ( 31)
+
+;; Succ edge  31
+
+(barrier 108 107 109)
+
+;; Start of basic block ( 20 21 23 25 27) -> 29
+;; Pred edge  20 (ab,abcall,eh)
+;; Pred edge  21 (ab,abcall,eh)
+;; Pred edge  23 (ab,abcall,eh)
+;; Pred edge  25 (ab,abcall,eh)
+;; Pred edge  27 (ab,abcall,eh)
+(code_label/s 109 108 110 29 37 "" [0 uses])
+
+(note 110 109 111 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+
+(insn 111 110 112 29 class_string.cpp:18 (set (reg:SI 62 [ save_filt.74 ])
+        (reg:SI 88)) -1 (nil))
+
+(insn 112 111 113 29 class_string.cpp:18 (set (reg/f:SI 63 [ save_eptr.73 ])
+        (reg:SI 89)) -1 (nil))
+
+(insn 113 112 114 29 class_string.cpp:18 (parallel [
+            (set (reg:SI 90)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -12 [0xfffffff4])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 114 113 115 29 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 90)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -12 [0xfffffff4]))
+        (nil)))
+
+(call_insn 115 114 116 29 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 116 115 117 29 class_string.cpp:18 (set (reg:SI 89)
+        (reg/f:SI 63 [ save_eptr.73 ])) -1 (nil))
+
+(insn 117 116 118 29 class_string.cpp:18 (set (reg:SI 88)
+        (reg:SI 62 [ save_filt.74 ])) -1 (nil))
+
+(jump_insn 118 117 119 29 class_string.cpp:18 (resx 3) -1 (nil))
+;; End of basic block 29 -> ( 30)
+
+;; Succ edge  30 (ab,eh)
+
+(barrier 119 118 120)
+
+;; Start of basic block ( 7 9 12 14 16 18 19 29) -> 30
+;; Pred edge  7 (ab,abcall,eh)
+;; Pred edge  9 (ab,abcall,eh)
+;; Pred edge  12 (ab,abcall,eh)
+;; Pred edge  14 (ab,abcall,eh)
+;; Pred edge  16 (ab,abcall,eh)
+;; Pred edge  18 (ab,abcall,eh)
+;; Pred edge  19 (ab,abcall,eh)
+;; Pred edge  29 (ab,eh)
+(code_label/s 120 119 121 30 38 "" [0 uses])
+
+(note 121 120 122 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
+
+(insn 122 121 123 30 class_string.cpp:18 (set (reg:SI 60 [ save_filt.76 ])
+        (reg:SI 88)) -1 (nil))
+
+(insn 123 122 124 30 class_string.cpp:18 (set (reg/f:SI 61 [ save_eptr.75 ])
+        (reg:SI 89)) -1 (nil))
+
+(insn 124 123 125 30 class_string.cpp:18 (parallel [
+            (set (reg:SI 91)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 125 124 126 30 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 91)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(call_insn 126 125 127 30 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 127 126 128 30 class_string.cpp:18 (set (reg:SI 89)
+        (reg/f:SI 61 [ save_eptr.75 ])) -1 (nil))
+
+(insn 128 127 129 30 class_string.cpp:18 (set (reg:SI 88)
+        (reg:SI 60 [ save_filt.76 ])) -1 (nil))
+
+(jump_insn 129 128 130 30 class_string.cpp:18 (resx 2) -1 (nil))
+;; End of basic block 30 -> ( 32)
+
+;; Succ edge  32 (ab,eh)
+
+(barrier 130 129 131)
+
+;; Start of basic block ( 28) -> 31
+;; Pred edge  28
+(code_label 131 130 132 31 36 "" [1 uses])
+
+(note 132 131 133 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+
+(insn 133 132 134 31 class_string.cpp:18 (parallel [
+            (set (reg:SI 92)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 134 133 135 31 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 92)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(call_insn 135 134 136 31 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(jump_insn 136 135 137 31 class_string.cpp:18 (set (pc)
+        (label_ref 149)) -1 (nil))
+;; End of basic block 31 -> ( 33)
+
+;; Succ edge  33
+
+(barrier 137 136 138)
+
+;; Start of basic block ( 3 5 6 30) -> 32
+;; Pred edge  3 (ab,abcall,eh)
+;; Pred edge  5 (ab,abcall,eh)
+;; Pred edge  6 (ab,abcall,eh)
+;; Pred edge  30 (ab,eh)
+(code_label/s 138 137 139 32 40 "" [0 uses])
+
+(note 139 138 140 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+
+(insn 140 139 141 32 class_string.cpp:18 (set (reg:SI 58 [ save_filt.78 ])
+        (reg:SI 88)) -1 (nil))
+
+(insn 141 140 142 32 class_string.cpp:18 (set (reg/f:SI 59 [ save_eptr.77 ])
+        (reg:SI 89)) -1 (nil))
+
+(insn 142 141 143 32 class_string.cpp:18 (parallel [
+            (set (reg:SI 93)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 143 142 144 32 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 93)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 144 143 145 32 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 145 144 146 32 class_string.cpp:18 (set (reg:SI 89)
+        (reg/f:SI 59 [ save_eptr.77 ])) -1 (nil))
+
+(insn 146 145 147 32 class_string.cpp:18 (set (reg:SI 88)
+        (reg:SI 58 [ save_filt.78 ])) -1 (nil))
+
+(jump_insn 147 146 148 32 class_string.cpp:18 (resx 1) -1 (nil))
+;; End of basic block 32 -> ()
+
+
+(barrier 148 147 149)
+
+;; Start of basic block ( 31) -> 33
+;; Pred edge  31
+(code_label 149 148 150 33 39 "" [1 uses])
+
+(note 150 149 151 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+
+(insn 151 150 152 33 class_string.cpp:18 (parallel [
+            (set (reg:SI 94)
+                (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -4 [0xfffffffc])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 152 151 153 33 class_string.cpp:18 (set (mem/f/i:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg:SI 94)) -1 (expr_list:REG_EQUAL (plus:SI (reg/f:SI 54 virtual-stack-vars)
+            (const_int -4 [0xfffffffc]))
+        (nil)))
+
+(call_insn 153 152 154 33 class_string.cpp:18 (call (mem:QI (symbol_ref/i:SI ("_ZN6StringD1Ev") [flags 0x1]  <function_decl 0xb6b1c400 __comp_dtor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 154 153 155 33 class_string.cpp:18 (set (reg:SI 74 [ <result> ])
+        (reg:SI 64 [ D.21289 ])) -1 (nil))
+
+(jump_insn 155 154 156 33 class_string.cpp:18 (set (pc)
+        (label_ref 157)) -1 (nil))
+;; End of basic block 33 -> ( 35)
+
+;; Succ edge  35
+
+(barrier 156 155 165)
+
+;; Start of basic block () -> 34
+(note 165 156 159 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
+
+(insn 159 165 160 34 class_string.cpp:19 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 160 159 161 34 class_string.cpp:19 (clobber (reg:SI 74 [ <result> ])) -1 (nil))
+
+(jump_insn 161 160 162 34 class_string.cpp:19 (set (pc)
+        (label_ref 163)) -1 (nil))
+;; End of basic block 34 -> ( 36)
+
+;; Succ edge  36
+
+(barrier 162 161 157)
+
+;; Start of basic block ( 33) -> 35
+;; Pred edge  33
+(code_label 157 162 173 35 33 "" [1 uses])
+
+(note 173 157 158 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+
+(insn 158 173 163 35 class_string.cpp:19 (set (reg/i:SI 0 ax)
+        (reg:SI 74 [ <result> ])) -1 (nil))
+;; End of basic block 35 -> ( 36)
+
+;; Succ edge  36 (fallthru)
+
+;; Start of basic block ( 34 35) -> 36
+;; Pred edge  34
+;; Pred edge  35 (fallthru)
+(code_label 163 158 174 36 41 "" [1 uses])
+
+(note 174 163 164 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
+
+(insn 164 174 0 36 class_string.cpp:19 (use (reg/i:SI 0 ax)) -1 (nil))
+;; End of basic block 36 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function void __static_initialization_and_destruction_0(int, int) (_Z41__static_initialization_and_destruction_0ii)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; if (__initialize_p == 1)
+
+(insn 5 4 6 class_string.cpp:19 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 __initialize_p+0 S4 A32])
+            (const_int 1 [0x1]))) -1 (nil))
+
+(jump_insn 6 5 0 class_string.cpp:19 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 3
+
+;; if (__priority == 65535)
+
+(insn 8 7 9 class_string.cpp:19 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                    (const_int 4 [0x4])) [0 __priority+0 S4 A32])
+            (const_int 65535 [0xffff]))) -1 (nil))
+
+(jump_insn 9 8 0 class_string.cpp:19 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 0)
+            (pc))) -1 (nil))
+
+;; Generating RTL for gimple basic block 4
+
+;; __comp_ctor  (&__ioinit);
+
+(insn 11 10 12 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0xb6af3898 __ioinit>)) -1 (nil))
+
+(call_insn 12 11 0 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (call (mem:QI (symbol_ref:SI ("_ZNSt8ios_base4InitC1Ev") [flags 0x41]  <function_decl 0xb6e25c80 __comp_ctor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (nil)
+    (nil))
+
+;; __comp_dtor .72 = (void (*<Tbb>) (void *)) __comp_dtor ;
+
+(insn 13 12 0 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (reg/f:SI 58 [ __comp_dtor .72 ])
+        (symbol_ref:SI ("_ZNSt8ios_base4InitD1Ev") [flags 0x41]  <function_decl 0xb6e25d80 __comp_dtor >)) -1 (nil))
+
+;; __cxa_atexit (__comp_dtor .72, &__ioinit, &__dso_handle);
+
+(insn 14 13 15 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (symbol_ref:SI ("__dso_handle") [flags 0x40]  <var_decl 0xb6b3f318 __dso_handle>)) -1 (nil))
+
+(insn 15 14 16 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0xb6af3898 __ioinit>)) -1 (nil))
+
+(insn 16 15 17 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 58 [ __comp_dtor .72 ])) -1 (nil))
+
+(call_insn 17 16 0 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("__cxa_atexit") [flags 0x41]  <function_decl 0xb6b1c980 __cxa_atexit>) [0 S1 A8])
+            (const_int 12 [0xc]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+;; Generating RTL for gimple basic block 5
+
+;; 
+
+(code_label 18 17 19 46 "" [0 uses])
+
+(note 19 18 0 NOTE_INSN_BASIC_BLOCK)
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.cpp:19 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 __initialize_p+0 S4 A32])
+            (const_int 1 [0x1]))) -1 (nil))
+
+(jump_insn 6 5 7 3 class_string.cpp:19 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 18)
+            (pc))) -1 (nil))
+;; End of basic block 3 -> ( 4 6)
+
+;; Succ edge  4 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 7 6 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 8 7 9 4 class_string.cpp:19 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                    (const_int 4 [0x4])) [0 __priority+0 S4 A32])
+            (const_int 65535 [0xffff]))) -1 (nil))
+
+(jump_insn 9 8 10 4 class_string.cpp:19 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 18)
+            (pc))) -1 (nil))
+;; End of basic block 4 -> ( 5 6)
+
+;; Succ edge  5 (fallthru)
+;; Succ edge  6
+
+;; Start of basic block ( 4) -> 5
+;; Pred edge  4 (fallthru)
+(note 10 9 11 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 11 10 12 5 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (symbol_ref:SI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0xb6af3898 __ioinit>)) -1 (nil))
+
+(call_insn 12 11 13 5 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (call (mem:QI (symbol_ref:SI ("_ZNSt8ios_base4InitC1Ev") [flags 0x41]  <function_decl 0xb6e25c80 __comp_ctor >) [0 S1 A8])
+        (const_int 4 [0x4])) -1 (nil)
+    (nil))
+
+(insn 13 12 14 5 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (reg/f:SI 58 [ __comp_dtor .72 ])
+        (symbol_ref:SI ("_ZNSt8ios_base4InitD1Ev") [flags 0x41]  <function_decl 0xb6e25d80 __comp_dtor >)) -1 (nil))
+
+(insn 14 13 15 5 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (symbol_ref:SI ("__dso_handle") [flags 0x40]  <var_decl 0xb6b3f318 __dso_handle>)) -1 (nil))
+
+(insn 15 14 16 5 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (symbol_ref:SI ("_ZStL8__ioinit") [flags 0x2]  <var_decl 0xb6af3898 __ioinit>)) -1 (nil))
+
+(insn 16 15 17 5 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 58 [ __comp_dtor .72 ])) -1 (nil))
+
+(call_insn 17 16 18 5 /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/iostream:72 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("__cxa_atexit") [flags 0x41]  <function_decl 0xb6b1c980 __cxa_atexit>) [0 S1 A8])
+            (const_int 12 [0xc]))) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 3 4 5) -> 6
+;; Pred edge  3
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 18 17 19 6 46 "" [2 uses])
+
+(note 19 18 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 6 -> ( 7)
+
+;; Succ edge  7 (fallthru)
+
+;; Start of basic block ( 6) -> 7
+;; Pred edge  6 (fallthru)
+(note 24 19 21 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 21 24 22 7 class_string.cpp:19 (set (pc)
+        (label_ref 23)) -1 (nil))
+;; End of basic block 7 -> ( 9)
+
+;; Succ edge  9
+
+(barrier 22 21 20)
+
+;; Start of basic block () -> 8
+(code_label 20 22 25 8 45 "" [0 uses])
+
+(note 25 20 23 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 8 -> ( 9)
+
+;; Succ edge  9 (fallthru)
+
+;; Start of basic block ( 7 8) -> 9
+;; Pred edge  7
+;; Pred edge  8 (fallthru)
+(code_label 23 25 26 9 47 "" [1 uses])
+
+(note 26 23 0 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 9 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function (static initializers for class_string.cpp) (_GLOBAL__I__ZlsRSoR6String)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; __static_initialization_and_destruction_0 (1, 65535);
+
+(insn 5 4 6 class_string.cpp:19 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (const_int 65535 [0xffff])) -1 (nil))
+
+(insn 6 5 7 class_string.cpp:19 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (const_int 1 [0x1])) -1 (nil))
+
+(call_insn 7 6 0 class_string.cpp:19 (call (mem:QI (symbol_ref:SI ("_Z41__static_initialization_and_destruction_0ii") [flags 0x3]  <function_decl 0xb6b1c900 __static_initialization_and_destruction_0>) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (nil)
+    (nil))
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY (fallthru)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+;; End of basic block 2 -> ( 3)
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; Pred edge  2 [100.0%]  (fallthru)
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 class_string.cpp:19 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (const_int 65535 [0xffff])) -1 (nil))
+
+(insn 6 5 7 3 class_string.cpp:19 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (const_int 1 [0x1])) -1 (nil))
+
+(call_insn 7 6 12 3 class_string.cpp:19 (call (mem:QI (symbol_ref:SI ("_Z41__static_initialization_and_destruction_0ii") [flags 0x3]  <function_decl 0xb6b1c900 __static_initialization_and_destruction_0>) [0 S1 A8])
+        (const_int 8 [0x8])) -1 (nil)
+    (nil))
+;; End of basic block 3 -> ( 4)
+
+;; Succ edge  4 (fallthru)
+
+;; Start of basic block ( 3) -> 4
+;; Pred edge  3 (fallthru)
+(note 12 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 9 12 10 4 class_string.cpp:19 (set (pc)
+        (label_ref 11)) -1 (nil))
+;; End of basic block 4 -> ( 6)
+
+;; Succ edge  6
+
+(barrier 10 9 8)
+
+;; Start of basic block () -> 5
+(code_label 8 10 13 5 48 "" [0 uses])
+
+(note 13 8 11 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 5 -> ( 6)
+
+;; Succ edge  6 (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; Pred edge  4
+;; Pred edge  5 (fallthru)
+(code_label 11 13 14 6 49 "" [1 uses])
+
+(note 14 11 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 6 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+

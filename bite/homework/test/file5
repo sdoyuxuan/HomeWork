@@ -1,0 +1,901 @@
+
+test.o:     file format elf32-i386
+
+SYMBOL TABLE:
+00000000 l    df *ABS*	00000000 test2.cpp
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .data	00000000 .data
+00000000 l    d  .bss	00000000 .bss
+00000000 l     O .bss	00000001 std::__ioinit
+00000000 l    d  .text._ZN5Base1C2Ev	00000000 .text._ZN5Base1C2Ev
+00000000 l    d  .rodata	00000000 .rodata
+00000000 l    d  .text._ZN5Base11AEv	00000000 .text._ZN5Base11AEv
+00000000 l    d  .text._ZN5Base2C2Ev	00000000 .text._ZN5Base2C2Ev
+00000000 l    d  .text._ZN5Base21AEv	00000000 .text._ZN5Base21AEv
+00000000 l    d  .text._ZN5Base21BEv	00000000 .text._ZN5Base21BEv
+00000000 l    d  .text._ZN7DerviedC2Ev	00000000 .text._ZN7DerviedC2Ev
+00000000 l    d  .text._ZN7Dervied1AEv	00000000 .text._ZN7Dervied1AEv
+00000000 l    d  .text._ZN5Base2aSERKS_	00000000 .text._ZN5Base2aSERKS_
+00000000 l    d  .rodata._ZTV7Dervied	00000000 .rodata._ZTV7Dervied
+00000000 l    d  .rodata._ZTV5Base2	00000000 .rodata._ZTV5Base2
+00000000 l    d  .rodata._ZTV5Base1	00000000 .rodata._ZTV5Base1
+00000000 l    d  .rodata._ZTS7Dervied	00000000 .rodata._ZTS7Dervied
+00000000 l    d  .rodata._ZTI7Dervied	00000000 .rodata._ZTI7Dervied
+00000000 l    d  .rodata._ZTS5Base2	00000000 .rodata._ZTS5Base2
+00000000 l    d  .rodata._ZTI5Base2	00000000 .rodata._ZTI5Base2
+00000000 l    d  .rodata._ZTS5Base1	00000000 .rodata._ZTS5Base1
+00000000 l    d  .rodata._ZTI5Base1	00000000 .rodata._ZTI5Base1
+000000d4 l     F .text	00000040 __static_initialization_and_destruction_0(int, int)
+00000114 l     F .text	0000001c global constructors keyed to _Z4testP5Base2
+00000000 l    d  .ctors	00000000 .ctors
+00000000 l    d  .note.GNU-stack	00000000 .note.GNU-stack
+00000000 l    d  .eh_frame	00000000 .eh_frame
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  _ZN5Base1C5Ev	00000000 _ZN5Base1C5Ev
+00000000 l    d  .group	00000000 .group
+00000000 l    d  _ZN5Base2C5Ev	00000000 _ZN5Base2C5Ev
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  _ZN7DerviedC5Ev	00000000 _ZN7DerviedC5Ev
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000  w    F .text._ZN5Base1C2Ev	00000018 Base1::Base1()
+00000000         *UND*	00000000 __gxx_personality_v0
+00000000  w    O .rodata._ZTV5Base1	0000000c vtable for Base1
+00000000  w    F .text._ZN5Base1C2Ev	00000018 Base1::Base1()
+00000000  w    F .text._ZN5Base11AEv	0000002f Base1::A()
+00000000         *UND*	00000000 std::cout
+00000000         *UND*	00000000 std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+00000000         *UND*	00000000 std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)
+00000000         *UND*	00000000 std::ostream::operator<<(std::ostream& (*)(std::ostream&))
+00000000  w    F .text._ZN5Base2C2Ev	00000018 Base2::Base2()
+00000000  w    O .rodata._ZTV5Base2	00000010 vtable for Base2
+00000000  w    F .text._ZN5Base2C2Ev	00000018 Base2::Base2()
+00000000  w    F .text._ZN5Base21AEv	0000002f Base2::A()
+00000000  w    F .text._ZN5Base21BEv	0000002f Base2::B()
+00000000  w    F .text._ZN7DerviedC2Ev	0000003e Dervied::Dervied()
+00000000  w    O .rodata._ZTV7Dervied	0000001c vtable for Dervied
+00000000  w    F .text._ZN7DerviedC2Ev	0000003e Dervied::Dervied()
+00000000  w    F .text._ZN7Dervied1AEv	00000007 covariant return thunk to Dervied::A()
+00000008  w    F .text._ZN7Dervied1AEv	0000002f Dervied::A()
+00000000 g     F .text	00000017 test(Base2*)
+00000000  w    F .text._ZN5Base2aSERKS_	00000014 Base2::operator=(Base2 const&)
+00000017 g     F .text	000000bd main
+00000000  w    O .rodata._ZTI7Dervied	00000020 typeinfo for Dervied
+00000000  w    O .rodata._ZTI5Base2	00000008 typeinfo for Base2
+00000000  w    O .rodata._ZTI5Base1	00000008 typeinfo for Base1
+00000000  w    O .rodata._ZTS7Dervied	00000009 typeinfo name for Dervied
+00000000         *UND*	00000000 vtable for __cxxabiv1::__vmi_class_type_info
+00000000  w    O .rodata._ZTS5Base2	00000007 typeinfo name for Base2
+00000000         *UND*	00000000 vtable for __cxxabiv1::__class_type_info
+00000000  w    O .rodata._ZTS5Base1	00000007 typeinfo name for Base1
+00000000         *UND*	00000000 std::ios_base::Init::Init()
+00000000         *UND*	00000000 std::ios_base::Init::~Init()
+00000000         *UND*	00000000 __dso_handle
+00000000         *UND*	00000000 __cxa_atexit
+00000037  w    F .text._ZN7Dervied1AEv	00000021 covariant return thunk to Dervied::A()
+
+
+
+Disassembly of section _ZN5Base1C5Ev:
+
+00000000 <_ZN5Base1C5Ev>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	16                   	push   %ss
+   5:	00 00                	add    %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	19 00                	sbb    %eax,(%eax)
+	...
+
+Disassembly of section _ZN5Base2C5Ev:
+
+00000000 <_ZN5Base2C5Ev>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	1b 00                	sbb    (%eax),%eax
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	1d                   	.byte 0x1d
+   5:	00 00                	add    %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	1f                   	pop    %ds
+   5:	00 00                	add    %al,(%eax)
+	...
+
+Disassembly of section _ZN7DerviedC5Ev:
+
+00000000 <_ZN7DerviedC5Ev>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	21 00                	and    %eax,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	23 00                	and    (%eax),%eax
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	25                   	.byte 0x25
+   5:	00 00                	add    %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	26 00 00             	add    %al,%es:(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	28 00                	sub    %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	2a 00                	sub    (%eax),%al
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	2c 00                	sub    $0x0,%al
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	2d                   	.byte 0x2d
+   5:	00 00                	add    %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	2f                   	das    
+   5:	00 00                	add    %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	30 00                	xor    %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	32 00                	xor    (%eax),%al
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	33 00                	xor    (%eax),%eax
+	...
+
+Disassembly of section .text:
+
+00000000 <test(Base2*)>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	8b 45 08             	mov    0x8(%ebp),%eax
+   9:	8b 00                	mov    (%eax),%eax
+   b:	8b 10                	mov    (%eax),%edx
+   d:	8b 45 08             	mov    0x8(%ebp),%eax
+  10:	89 04 24             	mov    %eax,(%esp)
+  13:	ff d2                	call   *%edx
+  15:	c9                   	leave  
+  16:	c3                   	ret    
+
+00000017 <main>:
+  17:	55                   	push   %ebp
+  18:	89 e5                	mov    %esp,%ebp
+  1a:	83 e4 f0             	and    $0xfffffff0,%esp
+  1d:	83 ec 40             	sub    $0x40,%esp
+  20:	8d 44 24 24          	lea    0x24(%esp),%eax
+  24:	89 04 24             	mov    %eax,(%esp)
+  27:	e8 fc ff ff ff       	call   28 <main+0x11>
+			28: R_386_PC32	Dervied::Dervied()
+  2c:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  30:	89 04 24             	mov    %eax,(%esp)
+  33:	e8 fc ff ff ff       	call   34 <main+0x1d>
+			34: R_386_PC32	Base2::Base2()
+  38:	8d 44 24 24          	lea    0x24(%esp),%eax
+  3c:	83 c0 08             	add    $0x8,%eax
+  3f:	89 44 24 04          	mov    %eax,0x4(%esp)
+  43:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  47:	89 04 24             	mov    %eax,(%esp)
+  4a:	e8 fc ff ff ff       	call   4b <main+0x34>
+			4b: R_386_PC32	Base2::operator=(Base2 const&)
+  4f:	8d 44 24 24          	lea    0x24(%esp),%eax
+  53:	89 44 24 38          	mov    %eax,0x38(%esp)
+  57:	8d 44 24 24          	lea    0x24(%esp),%eax
+  5b:	83 c0 08             	add    $0x8,%eax
+  5e:	89 44 24 3c          	mov    %eax,0x3c(%esp)
+  62:	8b 44 24 38          	mov    0x38(%esp),%eax
+  66:	8b 40 08             	mov    0x8(%eax),%eax
+  69:	83 c0 04             	add    $0x4,%eax
+  6c:	8b 00                	mov    (%eax),%eax
+  6e:	8b 54 24 38          	mov    0x38(%esp),%edx
+  72:	83 c2 08             	add    $0x8,%edx
+  75:	89 14 24             	mov    %edx,(%esp)
+  78:	ff d0                	call   *%eax
+  7a:	8b 44 24 38          	mov    0x38(%esp),%eax
+  7e:	8b 00                	mov    (%eax),%eax
+  80:	8b 10                	mov    (%eax),%edx
+  82:	8b 44 24 38          	mov    0x38(%esp),%eax
+  86:	89 04 24             	mov    %eax,(%esp)
+  89:	ff d2                	call   *%edx
+  8b:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  8f:	8b 00                	mov    (%eax),%eax
+  91:	8b 10                	mov    (%eax),%edx
+  93:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  97:	89 04 24             	mov    %eax,(%esp)
+  9a:	ff d2                	call   *%edx
+  9c:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  a0:	8b 00                	mov    (%eax),%eax
+  a2:	83 c0 04             	add    $0x4,%eax
+  a5:	8b 10                	mov    (%eax),%edx
+  a7:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  ab:	89 04 24             	mov    %eax,(%esp)
+  ae:	ff d2                	call   *%edx
+  b0:	83 7c 24 38 00       	cmpl   $0x0,0x38(%esp)
+  b5:	74 09                	je     c0 <main+0xa9>
+  b7:	8b 44 24 38          	mov    0x38(%esp),%eax
+  bb:	83 c0 08             	add    $0x8,%eax
+  be:	eb 05                	jmp    c5 <main+0xae>
+  c0:	b8 00 00 00 00       	mov    $0x0,%eax
+  c5:	89 04 24             	mov    %eax,(%esp)
+  c8:	e8 fc ff ff ff       	call   c9 <main+0xb2>
+			c9: R_386_PC32	test(Base2*)
+  cd:	b8 00 00 00 00       	mov    $0x0,%eax
+  d2:	c9                   	leave  
+  d3:	c3                   	ret    
+
+000000d4 <__static_initialization_and_destruction_0(int, int)>:
+  d4:	55                   	push   %ebp
+  d5:	89 e5                	mov    %esp,%ebp
+  d7:	83 ec 18             	sub    $0x18,%esp
+  da:	83 7d 08 01          	cmpl   $0x1,0x8(%ebp)
+  de:	75 32                	jne    112 <__static_initialization_and_destruction_0(int, int)+0x3e>
+  e0:	81 7d 0c ff ff 00 00 	cmpl   $0xffff,0xc(%ebp)
+  e7:	75 29                	jne    112 <__static_initialization_and_destruction_0(int, int)+0x3e>
+  e9:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+			ec: R_386_32	.bss
+  f0:	e8 fc ff ff ff       	call   f1 <__static_initialization_and_destruction_0(int, int)+0x1d>
+			f1: R_386_PC32	std::ios_base::Init::Init()
+  f5:	b8 00 00 00 00       	mov    $0x0,%eax
+			f6: R_386_32	std::ios_base::Init::~Init()
+  fa:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp)
+ 101:	00 
+			fe: R_386_32	__dso_handle
+ 102:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+ 109:	00 
+			106: R_386_32	.bss
+ 10a:	89 04 24             	mov    %eax,(%esp)
+ 10d:	e8 fc ff ff ff       	call   10e <__static_initialization_and_destruction_0(int, int)+0x3a>
+			10e: R_386_PC32	__cxa_atexit
+ 112:	c9                   	leave  
+ 113:	c3                   	ret    
+
+00000114 <global constructors keyed to _Z4testP5Base2>:
+ 114:	55                   	push   %ebp
+ 115:	89 e5                	mov    %esp,%ebp
+ 117:	83 ec 18             	sub    $0x18,%esp
+ 11a:	c7 44 24 04 ff ff 00 	movl   $0xffff,0x4(%esp)
+ 121:	00 
+ 122:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+ 129:	e8 a6 ff ff ff       	call   d4 <__static_initialization_and_destruction_0(int, int)>
+ 12e:	c9                   	leave  
+ 12f:	c3                   	ret    
+
+Disassembly of section .bss:
+
+00000000 <std::__ioinit>:
+	...
+
+Disassembly of section .text._ZN5Base1C2Ev:
+
+00000000 <Base1::Base1()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 45 08             	mov    0x8(%ebp),%eax
+   6:	c7 00 08 00 00 00    	movl   $0x8,(%eax)
+			8: R_386_32	vtable for Base1
+   c:	8b 45 08             	mov    0x8(%ebp),%eax
+   f:	c7 40 04 00 00 00 00 	movl   $0x0,0x4(%eax)
+  16:	5d                   	pop    %ebp
+  17:	c3                   	ret    
+
+Disassembly of section .rodata:
+
+00000000 <.rodata>:
+   0:	69 20 61 6d 20 42    	imul   $0x42206d61,(%eax),%esp
+   6:	61                   	popa   
+   7:	73 65                	jae    6e <covariant return thunk to Dervied::A()+0x37>
+   9:	31 00                	xor    %eax,(%eax)
+   b:	69 20 61 6d 20 42    	imul   $0x42206d61,(%eax),%esp
+  11:	61                   	popa   
+  12:	73 65                	jae    79 <covariant return thunk to Dervied::A()+0x42>
+  14:	32 00                	xor    (%eax),%al
+  16:	42                   	inc    %edx
+  17:	00 69 20             	add    %ch,0x20(%ecx)
+  1a:	61                   	popa   
+  1b:	6d                   	insl   (%dx),%es:(%edi)
+  1c:	20 44 65 72          	and    %al,0x72(%ebp,%eiz,2)
+  20:	76 69                	jbe    8b <covariant return thunk to Dervied::A()+0x54>
+  22:	65                   	gs
+  23:	64                   	fs
+	...
+
+Disassembly of section .text._ZN5Base11AEv:
+
+00000000 <Base1::A()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+   d:	00 
+			a: R_386_32	.rodata
+   e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+			11: R_386_32	std::cout
+  15:	e8 fc ff ff ff       	call   16 <Base1::A()+0x16>
+			16: R_386_PC32	std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+  1a:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  21:	00 
+			1e: R_386_32	std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)
+  22:	89 04 24             	mov    %eax,(%esp)
+  25:	e8 fc ff ff ff       	call   26 <Base1::A()+0x26>
+			26: R_386_PC32	std::ostream::operator<<(std::ostream& (*)(std::ostream&))
+  2a:	8b 45 08             	mov    0x8(%ebp),%eax
+  2d:	c9                   	leave  
+  2e:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base2C2Ev:
+
+00000000 <Base2::Base2()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 45 08             	mov    0x8(%ebp),%eax
+   6:	c7 00 08 00 00 00    	movl   $0x8,(%eax)
+			8: R_386_32	vtable for Base2
+   c:	8b 45 08             	mov    0x8(%ebp),%eax
+   f:	c7 40 04 01 00 00 00 	movl   $0x1,0x4(%eax)
+  16:	5d                   	pop    %ebp
+  17:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base21AEv:
+
+00000000 <Base2::A()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 44 24 04 0b 00 00 	movl   $0xb,0x4(%esp)
+   d:	00 
+			a: R_386_32	.rodata
+   e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+			11: R_386_32	std::cout
+  15:	e8 fc ff ff ff       	call   16 <Base2::A()+0x16>
+			16: R_386_PC32	std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+  1a:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  21:	00 
+			1e: R_386_32	std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)
+  22:	89 04 24             	mov    %eax,(%esp)
+  25:	e8 fc ff ff ff       	call   26 <Base2::A()+0x26>
+			26: R_386_PC32	std::ostream::operator<<(std::ostream& (*)(std::ostream&))
+  2a:	8b 45 08             	mov    0x8(%ebp),%eax
+  2d:	c9                   	leave  
+  2e:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base21BEv:
+
+00000000 <Base2::B()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 44 24 04 16 00 00 	movl   $0x16,0x4(%esp)
+   d:	00 
+			a: R_386_32	.rodata
+   e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+			11: R_386_32	std::cout
+  15:	e8 fc ff ff ff       	call   16 <Base2::B()+0x16>
+			16: R_386_PC32	std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+  1a:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  21:	00 
+			1e: R_386_32	std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)
+  22:	89 04 24             	mov    %eax,(%esp)
+  25:	e8 fc ff ff ff       	call   26 <Base2::B()+0x26>
+			26: R_386_PC32	std::ostream::operator<<(std::ostream& (*)(std::ostream&))
+  2a:	8b 45 08             	mov    0x8(%ebp),%eax
+  2d:	c9                   	leave  
+  2e:	c3                   	ret    
+
+Disassembly of section .text._ZN7DerviedC2Ev:
+
+00000000 <Dervied::Dervied()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	8b 45 08             	mov    0x8(%ebp),%eax
+   9:	89 04 24             	mov    %eax,(%esp)
+   c:	e8 fc ff ff ff       	call   d <Dervied::Dervied()+0xd>
+			d: R_386_PC32	Base1::Base1()
+  11:	8b 45 08             	mov    0x8(%ebp),%eax
+  14:	83 c0 08             	add    $0x8,%eax
+  17:	89 04 24             	mov    %eax,(%esp)
+  1a:	e8 fc ff ff ff       	call   1b <Dervied::Dervied()+0x1b>
+			1b: R_386_PC32	Base2::Base2()
+  1f:	8b 45 08             	mov    0x8(%ebp),%eax
+  22:	c7 00 08 00 00 00    	movl   $0x8,(%eax)
+			24: R_386_32	vtable for Dervied
+  28:	8b 45 08             	mov    0x8(%ebp),%eax
+  2b:	c7 40 08 14 00 00 00 	movl   $0x14,0x8(%eax)
+			2e: R_386_32	vtable for Dervied
+  32:	8b 45 08             	mov    0x8(%ebp),%eax
+  35:	c7 40 10 02 00 00 00 	movl   $0x2,0x10(%eax)
+  3c:	c9                   	leave  
+  3d:	c3                   	ret    
+
+Disassembly of section .text._ZN7Dervied1AEv:
+
+00000000 <covariant return thunk to Dervied::A()>:
+   0:	83 44 24 04 f8       	addl   $0xfffffff8,0x4(%esp)
+   5:	eb 30                	jmp    37 <covariant return thunk to Dervied::A()>
+   7:	90                   	nop
+
+00000008 <Dervied::A()>:
+   8:	55                   	push   %ebp
+   9:	89 e5                	mov    %esp,%ebp
+   b:	83 ec 18             	sub    $0x18,%esp
+   e:	c7 44 24 04 18 00 00 	movl   $0x18,0x4(%esp)
+  15:	00 
+			12: R_386_32	.rodata
+  16:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+			19: R_386_32	std::cout
+  1d:	e8 fc ff ff ff       	call   1e <Dervied::A()+0x16>
+			1e: R_386_PC32	std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+  22:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  29:	00 
+			26: R_386_32	std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)
+  2a:	89 04 24             	mov    %eax,(%esp)
+  2d:	e8 fc ff ff ff       	call   2e <Dervied::A()+0x26>
+			2e: R_386_PC32	std::ostream::operator<<(std::ostream& (*)(std::ostream&))
+  32:	8b 45 08             	mov    0x8(%ebp),%eax
+  35:	c9                   	leave  
+  36:	c3                   	ret    
+
+00000037 <covariant return thunk to Dervied::A()>:
+  37:	55                   	push   %ebp
+  38:	89 e5                	mov    %esp,%ebp
+  3a:	83 ec 18             	sub    $0x18,%esp
+  3d:	8b 45 08             	mov    0x8(%ebp),%eax
+  40:	89 04 24             	mov    %eax,(%esp)
+  43:	e8 c0 ff ff ff       	call   8 <Dervied::A()>
+  48:	85 c0                	test   %eax,%eax
+  4a:	74 05                	je     51 <covariant return thunk to Dervied::A()+0x1a>
+  4c:	83 c0 08             	add    $0x8,%eax
+  4f:	eb 05                	jmp    56 <covariant return thunk to Dervied::A()+0x1f>
+  51:	b8 00 00 00 00       	mov    $0x0,%eax
+  56:	c9                   	leave  
+  57:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base2aSERKS_:
+
+00000000 <Base2::operator=(Base2 const&)>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 45 0c             	mov    0xc(%ebp),%eax
+   6:	8b 50 04             	mov    0x4(%eax),%edx
+   9:	8b 45 08             	mov    0x8(%ebp),%eax
+   c:	89 50 04             	mov    %edx,0x4(%eax)
+   f:	8b 45 08             	mov    0x8(%ebp),%eax
+  12:	5d                   	pop    %ebp
+  13:	c3                   	ret    
+
+Disassembly of section .rodata._ZTV7Dervied:
+
+00000000 <vtable for Dervied>:
+	...
+			4: R_386_32	typeinfo for Dervied
+			8: R_386_32	Dervied::A()
+   c:	f8                   	clc    
+   d:	ff                   	(bad)  
+   e:	ff                   	(bad)  
+   f:	ff 00                	incl   (%eax)
+			10: R_386_32	typeinfo for Dervied
+	...
+			14: R_386_32	covariant return thunk to Dervied::A()
+			18: R_386_32	Base2::B()
+
+Disassembly of section .rodata._ZTV5Base2:
+
+00000000 <vtable for Base2>:
+	...
+			4: R_386_32	typeinfo for Base2
+			8: R_386_32	Base2::A()
+			c: R_386_32	Base2::B()
+
+Disassembly of section .rodata._ZTV5Base1:
+
+00000000 <vtable for Base1>:
+	...
+			4: R_386_32	typeinfo for Base1
+			8: R_386_32	Base1::A()
+
+Disassembly of section .rodata._ZTS7Dervied:
+
+00000000 <typeinfo name for Dervied>:
+   0:	37                   	aaa    
+   1:	44                   	inc    %esp
+   2:	65                   	gs
+   3:	72 76                	jb     7b <covariant return thunk to Dervied::A()+0x44>
+   5:	69                   	.byte 0x69
+   6:	65                   	gs
+   7:	64                   	fs
+	...
+
+Disassembly of section .rodata._ZTI7Dervied:
+
+00000000 <typeinfo for Dervied>:
+   0:	08 00                	or     %al,(%eax)
+			0: R_386_32	vtable for __cxxabiv1::__vmi_class_type_info
+	...
+			4: R_386_32	typeinfo name for Dervied
+   a:	00 00                	add    %al,(%eax)
+   c:	02 00                	add    (%eax),%al
+   e:	00 00                	add    %al,(%eax)
+  10:	00 00                	add    %al,(%eax)
+			10: R_386_32	typeinfo for Base1
+  12:	00 00                	add    %al,(%eax)
+  14:	02 00                	add    (%eax),%al
+  16:	00 00                	add    %al,(%eax)
+  18:	00 00                	add    %al,(%eax)
+			18: R_386_32	typeinfo for Base2
+  1a:	00 00                	add    %al,(%eax)
+  1c:	02 08                	add    (%eax),%cl
+	...
+
+Disassembly of section .rodata._ZTS5Base2:
+
+00000000 <typeinfo name for Base2>:
+   0:	35 42 61 73 65       	xor    $0x65736142,%eax
+   5:	32 00                	xor    (%eax),%al
+
+Disassembly of section .rodata._ZTI5Base2:
+
+00000000 <typeinfo for Base2>:
+   0:	08 00                	or     %al,(%eax)
+			0: R_386_32	vtable for __cxxabiv1::__class_type_info
+   2:	00 00                	add    %al,(%eax)
+   4:	00 00                	add    %al,(%eax)
+			4: R_386_32	typeinfo name for Base2
+	...
+
+Disassembly of section .rodata._ZTS5Base1:
+
+00000000 <typeinfo name for Base1>:
+   0:	35 42 61 73 65       	xor    $0x65736142,%eax
+   5:	31 00                	xor    %eax,(%eax)
+
+Disassembly of section .rodata._ZTI5Base1:
+
+00000000 <typeinfo for Base1>:
+   0:	08 00                	or     %al,(%eax)
+			0: R_386_32	vtable for __cxxabiv1::__class_type_info
+   2:	00 00                	add    %al,(%eax)
+   4:	00 00                	add    %al,(%eax)
+			4: R_386_32	typeinfo name for Base1
+	...
+
+Disassembly of section .ctors:
+
+00000000 <.ctors>:
+   0:	14 01                	adc    $0x1,%al
+			0: R_386_32	.text
+	...
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	00 47 43             	add    %al,0x43(%edi)
+   3:	43                   	inc    %ebx
+   4:	3a 20                	cmp    (%eax),%ah
+   6:	28 47 4e             	sub    %al,0x4e(%edi)
+   9:	55                   	push   %ebp
+   a:	29 20                	sub    %esp,(%eax)
+   c:	34 2e                	xor    $0x2e,%al
+   e:	34 2e                	xor    $0x2e,%al
+  10:	37                   	aaa    
+  11:	20 32                	and    %dh,(%edx)
+  13:	30 31                	xor    %dh,(%ecx)
+  15:	32 30                	xor    (%eax),%dh
+  17:	33 31                	xor    (%ecx),%esi
+  19:	33 20                	xor    (%eax),%esp
+  1b:	28 52 65             	sub    %dl,0x65(%edx)
+  1e:	64 20 48 61          	and    %cl,%fs:0x61(%eax)
+  22:	74 20                	je     44 <covariant return thunk to Dervied::A()+0xd>
+  24:	34 2e                	xor    $0x2e,%al
+  26:	34 2e                	xor    $0x2e,%al
+  28:	37                   	aaa    
+  29:	2d 31 37 29 00       	sub    $0x293731,%eax
+
+Disassembly of section .eh_frame:
+
+00000000 <.eh_frame>:
+   0:	18 00                	sbb    %al,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	00 00                	add    %al,(%eax)
+   6:	00 00                	add    %al,(%eax)
+   8:	01 7a 50             	add    %edi,0x50(%edx)
+   b:	52                   	push   %edx
+   c:	00 01                	add    %al,(%ecx)
+   e:	7c 08                	jl     18 <.eh_frame+0x18>
+  10:	06                   	push   %es
+  11:	00 00                	add    %al,(%eax)
+			12: R_386_32	__gxx_personality_v0
+  13:	00 00                	add    %al,(%eax)
+  15:	00 1b                	add    %bl,(%ebx)
+  17:	0c 04                	or     $0x4,%al
+  19:	04 88                	add    $0x88,%al
+  1b:	01 1c 00             	add    %ebx,(%eax,%eax,1)
+  1e:	00 00                	add    %al,(%eax)
+  20:	20 00                	and    %al,(%eax)
+  22:	00 00                	add    %al,(%eax)
+  24:	00 00                	add    %al,(%eax)
+			24: R_386_PC32	.text._ZN5Base1C2Ev
+  26:	00 00                	add    %al,(%eax)
+  28:	18 00                	sbb    %al,(%eax)
+  2a:	00 00                	add    %al,(%eax)
+  2c:	00 41 0e             	add    %al,0xe(%ecx)
+  2f:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  35:	54                   	push   %esp
+  36:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
+  39:	04 00                	add    $0x0,%al
+  3b:	00 1c 00             	add    %bl,(%eax,%eax,1)
+  3e:	00 00                	add    %al,(%eax)
+  40:	40                   	inc    %eax
+  41:	00 00                	add    %al,(%eax)
+  43:	00 00                	add    %al,(%eax)
+			44: R_386_PC32	.text._ZN5Base11AEv
+  45:	00 00                	add    %al,(%eax)
+  47:	00 2f                	add    %ch,(%edi)
+  49:	00 00                	add    %al,(%eax)
+  4b:	00 00                	add    %al,(%eax)
+  4d:	41                   	inc    %ecx
+  4e:	0e                   	push   %cs
+  4f:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  55:	6b c5 0c             	imul   $0xc,%ebp,%eax
+  58:	04 04                	add    $0x4,%al
+  5a:	00 00                	add    %al,(%eax)
+  5c:	1c 00                	sbb    $0x0,%al
+  5e:	00 00                	add    %al,(%eax)
+  60:	60                   	pusha  
+  61:	00 00                	add    %al,(%eax)
+  63:	00 00                	add    %al,(%eax)
+			64: R_386_PC32	.text._ZN5Base2C2Ev
+  65:	00 00                	add    %al,(%eax)
+  67:	00 18                	add    %bl,(%eax)
+  69:	00 00                	add    %al,(%eax)
+  6b:	00 00                	add    %al,(%eax)
+  6d:	41                   	inc    %ecx
+  6e:	0e                   	push   %cs
+  6f:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  75:	54                   	push   %esp
+  76:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
+  79:	04 00                	add    $0x0,%al
+  7b:	00 1c 00             	add    %bl,(%eax,%eax,1)
+  7e:	00 00                	add    %al,(%eax)
+  80:	80 00 00             	addb   $0x0,(%eax)
+  83:	00 00                	add    %al,(%eax)
+			84: R_386_PC32	.text._ZN5Base21AEv
+  85:	00 00                	add    %al,(%eax)
+  87:	00 2f                	add    %ch,(%edi)
+  89:	00 00                	add    %al,(%eax)
+  8b:	00 00                	add    %al,(%eax)
+  8d:	41                   	inc    %ecx
+  8e:	0e                   	push   %cs
+  8f:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  95:	6b c5 0c             	imul   $0xc,%ebp,%eax
+  98:	04 04                	add    $0x4,%al
+  9a:	00 00                	add    %al,(%eax)
+  9c:	1c 00                	sbb    $0x0,%al
+  9e:	00 00                	add    %al,(%eax)
+  a0:	a0 00 00 00 00       	mov    0x0,%al
+			a4: R_386_PC32	.text._ZN5Base21BEv
+  a5:	00 00                	add    %al,(%eax)
+  a7:	00 2f                	add    %ch,(%edi)
+  a9:	00 00                	add    %al,(%eax)
+  ab:	00 00                	add    %al,(%eax)
+  ad:	41                   	inc    %ecx
+  ae:	0e                   	push   %cs
+  af:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  b5:	6b c5 0c             	imul   $0xc,%ebp,%eax
+  b8:	04 04                	add    $0x4,%al
+  ba:	00 00                	add    %al,(%eax)
+  bc:	1c 00                	sbb    $0x0,%al
+  be:	00 00                	add    %al,(%eax)
+  c0:	c0 00 00             	rolb   $0x0,(%eax)
+  c3:	00 00                	add    %al,(%eax)
+			c4: R_386_PC32	.text._ZN7DerviedC2Ev
+  c5:	00 00                	add    %al,(%eax)
+  c7:	00 3e                	add    %bh,(%esi)
+  c9:	00 00                	add    %al,(%eax)
+  cb:	00 00                	add    %al,(%eax)
+  cd:	41                   	inc    %ecx
+  ce:	0e                   	push   %cs
+  cf:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  d5:	7a c5                	jp     9c <.eh_frame+0x9c>
+  d7:	0c 04                	or     $0x4,%al
+  d9:	04 00                	add    $0x0,%al
+  db:	00 10                	add    %dl,(%eax)
+  dd:	00 00                	add    %al,(%eax)
+  df:	00 e0                	add    %ah,%al
+  e1:	00 00                	add    %al,(%eax)
+  e3:	00 00                	add    %al,(%eax)
+			e4: R_386_PC32	.text._ZN7Dervied1AEv
+  e5:	00 00                	add    %al,(%eax)
+  e7:	00 07                	add    %al,(%edi)
+  e9:	00 00                	add    %al,(%eax)
+  eb:	00 00                	add    %al,(%eax)
+  ed:	00 00                	add    %al,(%eax)
+  ef:	00 1c 00             	add    %bl,(%eax,%eax,1)
+  f2:	00 00                	add    %al,(%eax)
+  f4:	f4                   	hlt    
+  f5:	00 00                	add    %al,(%eax)
+  f7:	00 08                	add    %cl,(%eax)
+			f8: R_386_PC32	.text._ZN7Dervied1AEv
+  f9:	00 00                	add    %al,(%eax)
+  fb:	00 2f                	add    %ch,(%edi)
+  fd:	00 00                	add    %al,(%eax)
+  ff:	00 00                	add    %al,(%eax)
+ 101:	41                   	inc    %ecx
+ 102:	0e                   	push   %cs
+ 103:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+ 109:	6b c5 0c             	imul   $0xc,%ebp,%eax
+ 10c:	04 04                	add    $0x4,%al
+ 10e:	00 00                	add    %al,(%eax)
+ 110:	1c 00                	sbb    $0x0,%al
+ 112:	00 00                	add    %al,(%eax)
+ 114:	14 01                	adc    $0x1,%al
+ 116:	00 00                	add    %al,(%eax)
+ 118:	00 00                	add    %al,(%eax)
+			118: R_386_PC32	.text
+ 11a:	00 00                	add    %al,(%eax)
+ 11c:	17                   	pop    %ss
+ 11d:	00 00                	add    %al,(%eax)
+ 11f:	00 00                	add    %al,(%eax)
+ 121:	41                   	inc    %ecx
+ 122:	0e                   	push   %cs
+ 123:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+ 129:	53                   	push   %ebx
+ 12a:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
+ 12d:	04 00                	add    $0x0,%al
+ 12f:	00 1c 00             	add    %bl,(%eax,%eax,1)
+ 132:	00 00                	add    %al,(%eax)
+ 134:	34 01                	xor    $0x1,%al
+ 136:	00 00                	add    %al,(%eax)
+ 138:	00 00                	add    %al,(%eax)
+			138: R_386_PC32	.text._ZN5Base2aSERKS_
+ 13a:	00 00                	add    %al,(%eax)
+ 13c:	14 00                	adc    $0x0,%al
+ 13e:	00 00                	add    %al,(%eax)
+ 140:	00 41 0e             	add    %al,0xe(%ecx)
+ 143:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+ 149:	50                   	push   %eax
+ 14a:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
+ 14d:	04 00                	add    $0x0,%al
+ 14f:	00 1c 00             	add    %bl,(%eax,%eax,1)
+ 152:	00 00                	add    %al,(%eax)
+ 154:	54                   	push   %esp
+ 155:	01 00                	add    %eax,(%eax)
+ 157:	00 17                	add    %dl,(%edi)
+			158: R_386_PC32	.text
+ 159:	00 00                	add    %al,(%eax)
+ 15b:	00 bd 00 00 00 00    	add    %bh,0x0(%ebp)
+ 161:	41                   	inc    %ecx
+ 162:	0e                   	push   %cs
+ 163:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+ 169:	02 b9 c5 0c 04 04    	add    0x4040cc5(%ecx),%bh
+ 16f:	00 1c 00             	add    %bl,(%eax,%eax,1)
+ 172:	00 00                	add    %al,(%eax)
+ 174:	74 01                	je     177 <.eh_frame+0x177>
+ 176:	00 00                	add    %al,(%eax)
+ 178:	d4 00                	aam    $0x0
+			178: R_386_PC32	.text
+ 17a:	00 00                	add    %al,(%eax)
+ 17c:	40                   	inc    %eax
+ 17d:	00 00                	add    %al,(%eax)
+ 17f:	00 00                	add    %al,(%eax)
+ 181:	41                   	inc    %ecx
+ 182:	0e                   	push   %cs
+ 183:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+ 189:	7c c5                	jl     150 <.eh_frame+0x150>
+ 18b:	0c 04                	or     $0x4,%al
+ 18d:	04 00                	add    $0x0,%al
+ 18f:	00 1c 00             	add    %bl,(%eax,%eax,1)
+ 192:	00 00                	add    %al,(%eax)
+ 194:	94                   	xchg   %eax,%esp
+ 195:	01 00                	add    %eax,(%eax)
+ 197:	00 14 01             	add    %dl,(%ecx,%eax,1)
+			198: R_386_PC32	.text
+ 19a:	00 00                	add    %al,(%eax)
+ 19c:	1c 00                	sbb    $0x0,%al
+ 19e:	00 00                	add    %al,(%eax)
+ 1a0:	00 41 0e             	add    %al,0xe(%ecx)
+ 1a3:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+ 1a9:	58                   	pop    %eax
+ 1aa:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
+ 1ad:	04 00                	add    $0x0,%al
+ 1af:	00 1c 00             	add    %bl,(%eax,%eax,1)
+ 1b2:	00 00                	add    %al,(%eax)
+ 1b4:	b4 01                	mov    $0x1,%ah
+ 1b6:	00 00                	add    %al,(%eax)
+ 1b8:	37                   	aaa    
+			1b8: R_386_PC32	.text._ZN7Dervied1AEv
+ 1b9:	00 00                	add    %al,(%eax)
+ 1bb:	00 21                	add    %ah,(%ecx)
+ 1bd:	00 00                	add    %al,(%eax)
+ 1bf:	00 00                	add    %al,(%eax)
+ 1c1:	41                   	inc    %ecx
+ 1c2:	0e                   	push   %cs
+ 1c3:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+ 1c9:	5d                   	pop    %ebp
+ 1ca:	c5 0c 04             	lds    (%esp,%eax,1),%ecx
+ 1cd:	04 00                	add    $0x0,%al
+	...

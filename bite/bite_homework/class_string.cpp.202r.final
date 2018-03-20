@@ -1,0 +1,48 @@
+
+;; Function String::String(const char*) (_ZN6StringC2EPKc)
+
+deleting insn with uid = 56.
+
+;; Function String::String(const String&) (_ZN6StringC2ERKS_)
+
+deleting insn with uid = 43.
+
+;; Function String& String::operator=(const String&) (_ZN6StringaSERKS_)
+
+deleting insn with uid = 69.
+
+;; Function int String::size() const (_ZNK6String4sizeEv)
+
+deleting insn with uid = 52.
+
+;; Function bool String::operator==(const String&) (_ZN6StringeqERKS_)
+
+deleting insn with uid = 82.
+
+;; Function bool String::operator!=(const String&) (_ZN6StringneERKS_)
+
+deleting insn with uid = 48.
+
+;; Function String::~String() (_ZN6StringD2Ev)
+
+deleting insn with uid = 36.
+
+;; Function void String::copy(char**, const char*) (_ZN6String4copyEPPcPKc)
+
+deleting insn with uid = 38.
+
+;; Function std::ostream& operator<<(std::ostream&, String&) (_ZlsRSoR6String)
+
+deleting insn with uid = 35.
+
+;; Function int main() (main)
+
+deleting insn with uid = 248.
+
+;; Function void __static_initialization_and_destruction_0(int, int) (_Z41__static_initialization_and_destruction_0ii)
+
+deleting insn with uid = 36.
+
+;; Function (static initializers for class_string.cpp) (_GLOBAL__I__ZlsRSoR6String)
+
+deleting insn with uid = 24.

@@ -1,0 +1,38 @@
+00000114 t global constructors keyed to _Z4testP5Base2
+000000d4 t __static_initialization_and_destruction_0(int, int)
+00000000 T test(Base2*)
+00000000 W Base1::A()
+00000000 W Base1::Base1()
+00000000 W Base1::Base1()
+00000000 W Base2::A()
+00000000 W Base2::B()
+00000000 W Base2::Base2()
+00000000 W Base2::Base2()
+00000000 W Base2::operator=(Base2 const&)
+00000008 W Dervied::A()
+00000000 W Dervied::Dervied()
+00000000 W Dervied::Dervied()
+         U std::ostream::operator<<(std::ostream& (*)(std::ostream&))
+         U std::ios_base::Init::Init()
+         U std::ios_base::Init::~Init()
+         U std::cout
+         U std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)
+00000000 b std::__ioinit
+         U std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+00000000 V typeinfo for Base1
+00000000 V typeinfo for Base2
+00000000 V typeinfo for Dervied
+00000000 V typeinfo name for Base1
+00000000 V typeinfo name for Base2
+00000000 V typeinfo name for Dervied
+00000000 V vtable for Base1
+00000000 V vtable for Base2
+00000000 V vtable for Dervied
+         U vtable for __cxxabiv1::__class_type_info
+         U vtable for __cxxabiv1::__vmi_class_type_info
+00000037 W covariant return thunk to Dervied::A()
+00000000 W covariant return thunk to Dervied::A()
+         U __cxa_atexit
+         U __dso_handle
+         U __gxx_personality_v0
+00000017 T main

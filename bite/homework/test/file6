@@ -1,0 +1,261 @@
+
+test.o:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00000000 <test(Base2*)>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	8b 45 08             	mov    0x8(%ebp),%eax
+   9:	8b 00                	mov    (%eax),%eax
+   b:	8b 10                	mov    (%eax),%edx
+   d:	8b 45 08             	mov    0x8(%ebp),%eax
+  10:	89 04 24             	mov    %eax,(%esp)
+  13:	ff d2                	call   *%edx
+  15:	c9                   	leave  
+  16:	c3                   	ret    
+
+00000017 <main>:
+  17:	55                   	push   %ebp
+  18:	89 e5                	mov    %esp,%ebp
+  1a:	83 e4 f0             	and    $0xfffffff0,%esp
+  1d:	83 ec 40             	sub    $0x40,%esp
+  20:	8d 44 24 24          	lea    0x24(%esp),%eax
+  24:	89 04 24             	mov    %eax,(%esp)
+  27:	e8 fc ff ff ff       	call   28 <main+0x11>
+  2c:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  30:	89 04 24             	mov    %eax,(%esp)
+  33:	e8 fc ff ff ff       	call   34 <main+0x1d>
+  38:	8d 44 24 24          	lea    0x24(%esp),%eax
+  3c:	83 c0 08             	add    $0x8,%eax
+  3f:	89 44 24 04          	mov    %eax,0x4(%esp)
+  43:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+  47:	89 04 24             	mov    %eax,(%esp)
+  4a:	e8 fc ff ff ff       	call   4b <main+0x34>
+  4f:	8d 44 24 24          	lea    0x24(%esp),%eax
+  53:	89 44 24 38          	mov    %eax,0x38(%esp)
+  57:	8d 44 24 24          	lea    0x24(%esp),%eax
+  5b:	83 c0 08             	add    $0x8,%eax
+  5e:	89 44 24 3c          	mov    %eax,0x3c(%esp)
+  62:	8b 44 24 38          	mov    0x38(%esp),%eax
+  66:	8b 40 08             	mov    0x8(%eax),%eax
+  69:	83 c0 04             	add    $0x4,%eax
+  6c:	8b 00                	mov    (%eax),%eax
+  6e:	8b 54 24 38          	mov    0x38(%esp),%edx
+  72:	83 c2 08             	add    $0x8,%edx
+  75:	89 14 24             	mov    %edx,(%esp)
+  78:	ff d0                	call   *%eax
+  7a:	8b 44 24 38          	mov    0x38(%esp),%eax
+  7e:	8b 00                	mov    (%eax),%eax
+  80:	8b 10                	mov    (%eax),%edx
+  82:	8b 44 24 38          	mov    0x38(%esp),%eax
+  86:	89 04 24             	mov    %eax,(%esp)
+  89:	ff d2                	call   *%edx
+  8b:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  8f:	8b 00                	mov    (%eax),%eax
+  91:	8b 10                	mov    (%eax),%edx
+  93:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  97:	89 04 24             	mov    %eax,(%esp)
+  9a:	ff d2                	call   *%edx
+  9c:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  a0:	8b 00                	mov    (%eax),%eax
+  a2:	83 c0 04             	add    $0x4,%eax
+  a5:	8b 10                	mov    (%eax),%edx
+  a7:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  ab:	89 04 24             	mov    %eax,(%esp)
+  ae:	ff d2                	call   *%edx
+  b0:	83 7c 24 38 00       	cmpl   $0x0,0x38(%esp)
+  b5:	74 09                	je     c0 <main+0xa9>
+  b7:	8b 44 24 38          	mov    0x38(%esp),%eax
+  bb:	83 c0 08             	add    $0x8,%eax
+  be:	eb 05                	jmp    c5 <main+0xae>
+  c0:	b8 00 00 00 00       	mov    $0x0,%eax
+  c5:	89 04 24             	mov    %eax,(%esp)
+  c8:	e8 fc ff ff ff       	call   c9 <main+0xb2>
+  cd:	b8 00 00 00 00       	mov    $0x0,%eax
+  d2:	c9                   	leave  
+  d3:	c3                   	ret    
+
+000000d4 <__static_initialization_and_destruction_0(int, int)>:
+  d4:	55                   	push   %ebp
+  d5:	89 e5                	mov    %esp,%ebp
+  d7:	83 ec 18             	sub    $0x18,%esp
+  da:	83 7d 08 01          	cmpl   $0x1,0x8(%ebp)
+  de:	75 32                	jne    112 <__static_initialization_and_destruction_0(int, int)+0x3e>
+  e0:	81 7d 0c ff ff 00 00 	cmpl   $0xffff,0xc(%ebp)
+  e7:	75 29                	jne    112 <__static_initialization_and_destruction_0(int, int)+0x3e>
+  e9:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  f0:	e8 fc ff ff ff       	call   f1 <__static_initialization_and_destruction_0(int, int)+0x1d>
+  f5:	b8 00 00 00 00       	mov    $0x0,%eax
+  fa:	c7 44 24 08 00 00 00 	movl   $0x0,0x8(%esp)
+ 101:	00 
+ 102:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+ 109:	00 
+ 10a:	89 04 24             	mov    %eax,(%esp)
+ 10d:	e8 fc ff ff ff       	call   10e <__static_initialization_and_destruction_0(int, int)+0x3a>
+ 112:	c9                   	leave  
+ 113:	c3                   	ret    
+
+00000114 <global constructors keyed to _Z4testP5Base2>:
+ 114:	55                   	push   %ebp
+ 115:	89 e5                	mov    %esp,%ebp
+ 117:	83 ec 18             	sub    $0x18,%esp
+ 11a:	c7 44 24 04 ff ff 00 	movl   $0xffff,0x4(%esp)
+ 121:	00 
+ 122:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
+ 129:	e8 a6 ff ff ff       	call   d4 <__static_initialization_and_destruction_0(int, int)>
+ 12e:	c9                   	leave  
+ 12f:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base1C2Ev:
+
+00000000 <Base1::Base1()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 45 08             	mov    0x8(%ebp),%eax
+   6:	c7 00 08 00 00 00    	movl   $0x8,(%eax)
+   c:	8b 45 08             	mov    0x8(%ebp),%eax
+   f:	c7 40 04 00 00 00 00 	movl   $0x0,0x4(%eax)
+  16:	5d                   	pop    %ebp
+  17:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base11AEv:
+
+00000000 <Base1::A()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+   d:	00 
+   e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  15:	e8 fc ff ff ff       	call   16 <Base1::A()+0x16>
+  1a:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  21:	00 
+  22:	89 04 24             	mov    %eax,(%esp)
+  25:	e8 fc ff ff ff       	call   26 <Base1::A()+0x26>
+  2a:	8b 45 08             	mov    0x8(%ebp),%eax
+  2d:	c9                   	leave  
+  2e:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base2C2Ev:
+
+00000000 <Base2::Base2()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 45 08             	mov    0x8(%ebp),%eax
+   6:	c7 00 08 00 00 00    	movl   $0x8,(%eax)
+   c:	8b 45 08             	mov    0x8(%ebp),%eax
+   f:	c7 40 04 01 00 00 00 	movl   $0x1,0x4(%eax)
+  16:	5d                   	pop    %ebp
+  17:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base21AEv:
+
+00000000 <Base2::A()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 44 24 04 0b 00 00 	movl   $0xb,0x4(%esp)
+   d:	00 
+   e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  15:	e8 fc ff ff ff       	call   16 <Base2::A()+0x16>
+  1a:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  21:	00 
+  22:	89 04 24             	mov    %eax,(%esp)
+  25:	e8 fc ff ff ff       	call   26 <Base2::A()+0x26>
+  2a:	8b 45 08             	mov    0x8(%ebp),%eax
+  2d:	c9                   	leave  
+  2e:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base21BEv:
+
+00000000 <Base2::B()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	c7 44 24 04 16 00 00 	movl   $0x16,0x4(%esp)
+   d:	00 
+   e:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  15:	e8 fc ff ff ff       	call   16 <Base2::B()+0x16>
+  1a:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  21:	00 
+  22:	89 04 24             	mov    %eax,(%esp)
+  25:	e8 fc ff ff ff       	call   26 <Base2::B()+0x26>
+  2a:	8b 45 08             	mov    0x8(%ebp),%eax
+  2d:	c9                   	leave  
+  2e:	c3                   	ret    
+
+Disassembly of section .text._ZN7DerviedC2Ev:
+
+00000000 <Dervied::Dervied()>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	83 ec 18             	sub    $0x18,%esp
+   6:	8b 45 08             	mov    0x8(%ebp),%eax
+   9:	89 04 24             	mov    %eax,(%esp)
+   c:	e8 fc ff ff ff       	call   d <Dervied::Dervied()+0xd>
+  11:	8b 45 08             	mov    0x8(%ebp),%eax
+  14:	83 c0 08             	add    $0x8,%eax
+  17:	89 04 24             	mov    %eax,(%esp)
+  1a:	e8 fc ff ff ff       	call   1b <Dervied::Dervied()+0x1b>
+  1f:	8b 45 08             	mov    0x8(%ebp),%eax
+  22:	c7 00 08 00 00 00    	movl   $0x8,(%eax)
+  28:	8b 45 08             	mov    0x8(%ebp),%eax
+  2b:	c7 40 08 14 00 00 00 	movl   $0x14,0x8(%eax)
+  32:	8b 45 08             	mov    0x8(%ebp),%eax
+  35:	c7 40 10 02 00 00 00 	movl   $0x2,0x10(%eax)
+  3c:	c9                   	leave  
+  3d:	c3                   	ret    
+
+Disassembly of section .text._ZN7Dervied1AEv:
+
+00000000 <covariant return thunk to Dervied::A()>:
+   0:	83 44 24 04 f8       	addl   $0xfffffff8,0x4(%esp)
+   5:	eb 30                	jmp    37 <covariant return thunk to Dervied::A()>
+   7:	90                   	nop
+
+00000008 <Dervied::A()>:
+   8:	55                   	push   %ebp
+   9:	89 e5                	mov    %esp,%ebp
+   b:	83 ec 18             	sub    $0x18,%esp
+   e:	c7 44 24 04 18 00 00 	movl   $0x18,0x4(%esp)
+  15:	00 
+  16:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
+  1d:	e8 fc ff ff ff       	call   1e <Dervied::A()+0x16>
+  22:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  29:	00 
+  2a:	89 04 24             	mov    %eax,(%esp)
+  2d:	e8 fc ff ff ff       	call   2e <Dervied::A()+0x26>
+  32:	8b 45 08             	mov    0x8(%ebp),%eax
+  35:	c9                   	leave  
+  36:	c3                   	ret    
+
+00000037 <covariant return thunk to Dervied::A()>:
+  37:	55                   	push   %ebp
+  38:	89 e5                	mov    %esp,%ebp
+  3a:	83 ec 18             	sub    $0x18,%esp
+  3d:	8b 45 08             	mov    0x8(%ebp),%eax
+  40:	89 04 24             	mov    %eax,(%esp)
+  43:	e8 c0 ff ff ff       	call   8 <Dervied::A()>
+  48:	85 c0                	test   %eax,%eax
+  4a:	74 05                	je     51 <covariant return thunk to Dervied::A()+0x1a>
+  4c:	83 c0 08             	add    $0x8,%eax
+  4f:	eb 05                	jmp    56 <covariant return thunk to Dervied::A()+0x1f>
+  51:	b8 00 00 00 00       	mov    $0x0,%eax
+  56:	c9                   	leave  
+  57:	c3                   	ret    
+
+Disassembly of section .text._ZN5Base2aSERKS_:
+
+00000000 <Base2::operator=(Base2 const&)>:
+   0:	55                   	push   %ebp
+   1:	89 e5                	mov    %esp,%ebp
+   3:	8b 45 0c             	mov    0xc(%ebp),%eax
+   6:	8b 50 04             	mov    0x4(%eax),%edx
+   9:	8b 45 08             	mov    0x8(%ebp),%eax
+   c:	89 50 04             	mov    %edx,0x4(%eax)
+   f:	8b 45 08             	mov    0x8(%ebp),%eax
+  12:	5d                   	pop    %ebp
+  13:	c3                   	ret    

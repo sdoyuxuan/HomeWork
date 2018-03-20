@@ -1,0 +1,78 @@
+
+;; Function String::String(const char*) (_ZN6StringC2EPKc)
+
+verify found no changes in insn with uid = 15.
+verify found no changes in insn with uid = 33.
+
+;; Function String::String(const String&) (_ZN6StringC2ERKS_)
+
+verify found no changes in insn with uid = 8.
+verify found no changes in insn with uid = 12.
+verify found no changes in insn with uid = 24.
+
+;; Function String& String::operator=(const String&) (_ZN6StringaSERKS_)
+
+verify found no changes in insn with uid = 9.
+verify found no changes in insn with uid = 23.
+verify found no changes in insn with uid = 32.
+
+;; Function int String::size() const (_ZNK6String4sizeEv)
+
+
+;; Function bool String::operator==(const String&) (_ZN6StringeqERKS_)
+
+
+;; Function bool String::operator!=(const String&) (_ZN6StringneERKS_)
+
+verify found no changes in insn with uid = 9.
+
+;; Function String::~String() (_ZN6StringD2Ev)
+
+verify found no changes in insn with uid = 13.
+
+;; Function void String::copy(char**, const char*) (_ZN6String4copyEPPcPKc)
+
+verify found no changes in insn with uid = 7.
+verify found no changes in insn with uid = 11.
+verify found no changes in insn with uid = 21.
+
+;; Function std::ostream& operator<<(std::ostream&, String&) (_ZlsRSoR6String)
+
+verify found no changes in insn with uid = 10.
+
+;; Function int main() (main)
+
+verify found no changes in insn with uid = 8.
+verify found no changes in insn with uid = 12.
+verify found no changes in insn with uid = 17.
+verify found no changes in insn with uid = 23.
+verify found no changes in insn with uid = 28.
+verify found no changes in insn with uid = 33.
+verify found no changes in insn with uid = 39.
+verify found no changes in insn with uid = 48.
+verify found no changes in insn with uid = 53.
+verify found no changes in insn with uid = 60.
+verify found no changes in insn with uid = 65.
+verify found no changes in insn with uid = 71.
+verify found no changes in insn with uid = 77.
+verify found no changes in insn with uid = 82.
+verify found no changes in insn with uid = 87.
+verify found no changes in insn with uid = 91.
+verify found no changes in insn with uid = 96.
+verify found no changes in insn with uid = 101.
+verify found no changes in insn with uid = 106.
+verify found no changes in insn with uid = 135.
+verify found no changes in insn with uid = 153.
+verify found no changes in insn with uid = 115.
+verify found no changes in insn with uid = 126.
+verify found no changes in insn with uid = 144.
+verify found no changes in insn with uid = 180.
+
+;; Function void __static_initialization_and_destruction_0(int, int) (_Z41__static_initialization_and_destruction_0ii)
+
+verify found no changes in insn with uid = 12.
+verify found no changes in insn with uid = 17.
+
+;; Function (static initializers for class_string.cpp) (_GLOBAL__I__ZlsRSoR6String)
+
+verify found no changes in insn with uid = 7.
